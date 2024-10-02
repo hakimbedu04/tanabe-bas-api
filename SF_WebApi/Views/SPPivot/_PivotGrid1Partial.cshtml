@@ -1,0 +1,238 @@
+@Html.DevExpress().PivotGrid(SF_WebApi.Controllers.Report.SPPivotGridLayout.SPPivotGridSettings).Bind(Model).GetHtml()
+@*@Html.DevExpress().PivotGrid(settings =>
+{
+    settings.Name = "PivotGrid1";
+    settings.CallbackRouteValues = new {Controller = "SPPivot", Action = "PivotGrid1Partial"};
+
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.RowArea;
+        field.FieldName = "sp_id";
+        field.Caption = "sp_id";
+        field.AreaIndex = 1;
+        field.ID = "1";
+        field.Visible = false;
+        field.Index = 0;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.RowArea;
+        field.FieldName = "spr_id";
+        field.Caption = "spr_id";
+        field.ID = "2";
+        field.Visible = false;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "spr_no";
+        field.Caption = "spr_no";
+        field.ID = "3";
+        field.Visible = false;
+    });
+    
+    settings.Fields.Add(field =>
+    {
+        field.ID = "4";
+        field.Area = PivotArea.RowArea;
+        field.FieldName = "sp_type";
+        field.Caption = "sp_type";
+        field.Visible = true;
+        field.AreaIndex = 0;
+        field.Index = 3;
+    });
+    settings.Fields.Add(field =>
+    {
+        field.ID = "58";
+        field.Area = PivotArea.RowArea;
+        field.FieldName = "e_name";
+        field.Caption = "EVENT NAME";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.RowArea;
+        field.FieldName = "e_topic";
+        field.Caption = "e_topic";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "e_place";
+        field.Caption = "e_place";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "e_dt_start";
+        field.Caption = "e_dt_start";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "e_dt_end";
+        field.Caption = "e_dt_end";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "date_realization";
+        field.Caption = "date_realization";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "product";
+        field.Caption = "product";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "sponsor";
+        field.Caption = "sponsor";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "dr_code";
+        field.Caption = "dr_code";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "dr_name";
+        field.Caption = "dr_name";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "sp_product_ownership";
+        field.Caption = "sp_product_ownership";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.Visible = false;
+        field.FieldName = "o_description";
+        field.Caption = "o_description";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "count_sp_plan";
+        field.Caption = "count_sp_plan";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "count_sp_real";
+        field.Caption = "count_sp_real";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.DataArea;
+        field.FieldName = "count_dr_plan";
+        field.Caption = "DR PLAN";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.DataArea;
+        field.FieldName = "count_dr_real";
+        field.Caption = "count_dr_real";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.DataArea;
+        field.FieldName = "budget_plan_value";
+        field.Caption = "budget_plan_value";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.DataArea;
+        field.FieldName = "budget_real_value";
+        field.Caption = "budget_real_value";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "initiator_name";
+        field.Caption = "initiator_name";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "rep_name";
+        field.Caption = "rep_name";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "rep_sbo";
+        field.Caption = "rep_sbo";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "rep_bo";
+        field.Caption = "rep_bo";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "rep_region";
+        field.Caption = "rep_region";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "nama_am";
+        field.Caption = "nama_am";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "nama_rm";
+        field.Caption = "nama_rm";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "nama_ppm";
+        field.Caption = "nama_ppm";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "dr_spec";
+        field.Caption = "dr_spec";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "dr_sub_spec";
+        field.Caption = "dr_sub_spec";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "dr_quadrant";
+        field.Caption = "dr_quadrant";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "dr_monitoring";
+        field.Caption = "dr_monitoring";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "spr_status";
+        field.Caption = "spr_status";
+    });
+    settings.Fields.Add(field =>
+    {
+        field.Area = PivotArea.FilterArea;
+        field.FieldName = "sp_status";
+        field.Caption = "sp_status";
+    });
+}).Bind(Model).GetHtml()*@

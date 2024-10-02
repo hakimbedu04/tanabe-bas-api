@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C7F4073-2820-47CA-823E-B9C504D294DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SF_Domain</RootNamespace>
+    <AssemblyName>SF_Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTOs\BAS\AchievemtnDTO.cs" />
+    <Compile Include="DTOs\BAS\bas_m_repDTO.cs" />
+    <Compile Include="DTOs\BAS\bas_v_rep_fullDTO.cs" />
+    <Compile Include="DTOs\BAS\CallDoctorDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableGeneralExpenseDetailApproveDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableGeneralExpenseDetailAttachDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableGeneralExpenseDetailDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableGeneralExpenseDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableSPActualDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableSPReportDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableUserHistoryDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableUserHistoryDetailDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableUserHistorySUMDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableUserPlanDTO.cs" />
+    <Compile Include="DTOs\BAS\DataTableUserPlanDetailDTO.cs" />
+    <Compile Include="DTOs\BAS\DetailExpenseModel.cs" />
+    <Compile Include="DTOs\BAS\DoctorActivityDTO.cs" />
+    <Compile Include="DTOs\BAS\EventDetail_DTO.cs" />
+    <Compile Include="DTOs\BAS\EventParticipant_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_bo_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_customer_aso_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_doctor_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_event_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_gl_cs_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_info_feedback_mobile_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_product_custom_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_product_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_regional_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_rep_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_sbo_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_sponsor_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_status_DTO.cs" />
+    <Compile Include="DTOs\BAS\m_topic_DTO.cs" />
+    <Compile Include="DTOs\BAS\OfflineInputs\t_visit_product_offline.cs" />
+    <Compile Include="DTOs\BAS\OfflineInputs\t_visit_product_topic_offline.cs" />
+    <Compile Include="DTOs\BAS\ProductUserDTO.cs" />
+    <Compile Include="DTOs\BAS\ProfileDoctorDetail.cs" />
+    <Compile Include="DTOs\BAS\SalesWDDTO.cs" />
+    <Compile Include="DTOs\BAS\SP_INSERT_VISIT_REALIZATION.cs" />
+    <Compile Include="DTOs\BAS\sp_offline_t_gps_mobile_DTO.cs" />
+    <Compile Include="DTOs\BAS\sp_offline_t_signature_mobile_DTO.cs" />
+    <Compile Include="DTOs\BAS\sp_offline_t_visit_product_DTO.cs" />
+    <Compile Include="DTOs\BAS\sp_offline_t_visit_product_topic_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_PRODUCT_SP_PLAN_MOBILE_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_PRODUCT_VISIT_MOBILE_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SelectVisitPlanDTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_DOCTOR_LIST_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_DOCTOR_LIST_NEW_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_DOCTOR_LIST_SPEAKER_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_DOCTOR_LIST_SP_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_FINISHED_VISIT_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_FINISHED_VISIT_MOBILE_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_IS_ALREADY_PLANNED_DOCTOR_IN_CURR_WEEK_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_MASTER_DOCTOR_PIVOT_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_PRODUCT_TOPIC_LIST_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_PRODUCT_USER_DTO.CS" />
+    <Compile Include="DTOs\BAS\SP_SELECT_PRODUCT_VISIT_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_SPR_INFO_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_SP_ATTACHMENT_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_SP_PLAN_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_SP_REALIZATION_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_VISIT_ASSOCIATE_NOTIFICATION_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_VISIT_SP_PLAN_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_VISIT_SP_ASSOCIATE_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_VISIT_SP_REALIZATION_DTO.cs" />
+    <Compile Include="DTOs\BAS\SP_SELECT_VISIT_USER_PRODUCT_DTO.CS" />
+    <Compile Include="DTOs\BAS\SummaryDoctor_DTO.cs" />
+    <Compile Include="DTOs\BAS\Temp_Approval_DTO.cs" />
+    <Compile Include="DTOs\BAS\Temp_HCP_DTO.cs" />
+    <Compile Include="DTOs\BAS\Temp_Sales_History_DTO.cs" />
+    <Compile Include="DTOs\BAS\TopRankDTO.cs" />
+    <Compile Include="DTOs\BAS\TrendSalesDTO.cs" />
+    <Compile Include="DTOs\BAS\t_gps_mobile_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_info_feedback_topic_mapping_mobile_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_sales_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_sales_product_actual_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_shift_log_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_signature_mobile_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_spAttachmentModel.cs" />
+    <Compile Include="DTOs\BAS\t_spr_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_sp_approval_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_sp_attachment_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_sp_doctor_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_sp_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_sp_sponsor_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_visit_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_visit_product_DTO.cs" />
+    <Compile Include="DTOs\BAS\t_visit_product_topic_DTO.cs" />
+    <Compile Include="DTOs\BAS\UserMobileDTO.cs" />
+    <Compile Include="DTOs\BAS\UserProfileDTO.cs" />
+    <Compile Include="DTOs\BAS\v_auth_sp_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_doctor_sponsor_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_info_feedback_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_rep_admin_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_sales_product_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_spr_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_sp_product_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_visit_associated_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_visit_plan_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_visit_plan_mobileDTO.cs" />
+    <Compile Include="DTOs\BAS\v_visit_plan_new_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_visit_product_DTO.cs" />
+    <Compile Include="DTOs\BAS\v_visit_product_topic_DTO.cs" />
+    <Compile Include="DTOs\BAS\TopPercentageDTO.cs" />
+    <Compile Include="DTOs\FullVisitDateDTO.cs" />
+    <Compile Include="DTOs\HRD\Bagian_DTO.cs" />
+    <Compile Include="DTOs\HRD\Departemen_DTO.cs" />
+    <Compile Include="DTOs\HRD\HeadQuarter_DTO.cs" />
+    <Compile Include="DTOs\HRD\hrd_All_KaryawanDTO.cs" />
+    <Compile Include="DTOs\HRD\hrd_tUserDTO.cs" />
+    <Compile Include="DTOs\HRD\Jabatan_DTO.cs" />
+    <Compile Include="DTOs\HRD\Karyawan_DTO.cs" />
+    <Compile Include="DTOs\Prod\Prod_All_KaryawanDTO.cs" />
+    <Compile Include="Inputs\BaseInput.cs" />
+    <Compile Include="Inputs\LogLoginInput.cs" />
+    <Compile Include="Inputs\ReportInputs.cs" />
+    <Compile Include="Inputs\SortBaseInput.cs" />
+    <Compile Include="Inputs\SP\SPInputs.cs" />
+    <Compile Include="Inputs\SP\TempProduct.cs" />
+    <Compile Include="Inputs\User\UserExportCustomModelInputs.cs" />
+    <Compile Include="Inputs\User\UserInputs.cs" />
+    <Compile Include="Inputs\Visit\RealizationOfflineInputs.cs" />
+    <Compile Include="Inputs\Visit\SP_SELECT_VISIT_PLAN_INPUTS.cs" />
+    <Compile Include="Inputs\Visit\VisitInputs.cs" />
+    <Compile Include="Inputs\Visit\VisitPlanInputs.cs" />
+    <Compile Include="Inputs\Visit\VisitRealizationInputs.cs" />
+    <Compile Include="Mappers\bas_MapperProfiles.cs" />
+    <Compile Include="Mappers\hrd_MapperProfiles.cs" />
+    <Compile Include="Mappers\prod_MapperProfiles.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SF_DAL\SF_DAL.csproj">
+      <Project>{b8510f9d-b9f3-4fdc-b018-b6e5b363bac3}</Project>
+      <Name>SF_DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2 @@
+ALTER TABLE t_visit_product_topic
+ADD show_duration int null

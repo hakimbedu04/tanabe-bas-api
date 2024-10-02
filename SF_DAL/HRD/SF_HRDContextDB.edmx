@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SF_HRDContextDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bagian">
+          <Key>
+            <PropertyRef Name="Kode Bagian" />
+          </Key>
+          <Property Name="Kode Bagian" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Nama Bagian" Type="varchar" MaxLength="50" />
+          <Property Name="Singkatan Bagian" Type="varchar" MaxLength="10" />
+          <Property Name="Kode Seksi" Type="char" MaxLength="6" />
+          <Property Name="hq" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Departemen">
+          <Key>
+            <PropertyRef Name="Kode_Departemen" />
+          </Key>
+          <Property Name="Kode_Departemen" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Nama_Departemen" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kode_Headquarter" Type="nvarchar" MaxLength="4" />
+          <Property Name="NIK" Type="char" MaxLength="5" />
+          <Property Name="kd_dept_asal" Type="varchar" MaxLength="50" />
+          <Property Name="nama_dept_asal" Type="varchar" MaxLength="50" />
+          <Property Name="kd_hq_asal" Type="varchar" MaxLength="10" />
+          <Property Name="kd_hq_contrary" Type="varchar" MaxLength="10" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="IndexID" Type="varchar" MaxLength="3" />
+          <Property Name="isActive" Type="int" />
+          <Property Name="Disabled" Type="int" />
+        </EntityType>
+        <EntityType Name="HeadQuarter">
+          <Key>
+            <PropertyRef Name="Kode_Headquarter" />
+          </Key>
+          <Property Name="Kode_Headquarter" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Nama_Headquarter" Type="nvarchar" MaxLength="50" />
+          <Property Name="NIK" Type="char" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Jabatan">
+          <Key>
+            <PropertyRef Name="Kode_Jabatan" />
+          </Key>
+          <Property Name="Kode_Jabatan" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Nama_Jabatan" Type="nvarchar" MaxLength="100" />
+          <Property Name="Kode_Level" Type="int" />
+          <Property Name="Tunjangan" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Nama_Level" Type="varchar" MaxLength="40" />
+          <Property Name="Level_Approval" Type="int" />
+          <Property Name="Nama_Jabatan2" Type="varchar" MaxLength="100" />
+          <Property Name="Disabled" Type="int" />
+        </EntityType>
+        <EntityType Name="Karyawan">
+          <Key>
+            <PropertyRef Name="Nomor_Induk" />
+          </Key>
+          <Property Name="Nomor_Induk" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Nama" Type="varchar" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="10" />
+          <Property Name="TitelBelakang" Type="varchar" MaxLength="20" />
+          <Property Name="Nomor_Astek" Type="varchar" MaxLength="20" />
+          <Property Name="Jenis_Kelamin" Type="varchar" MaxLength="9" />
+          <Property Name="Tempat_Lahir" Type="varchar" MaxLength="20" />
+          <Property Name="Tanggal_Lahir" Type="datetime" />
+          <Property Name="Alamat" Type="varchar" MaxLength="400" />
+          <Property Name="Alamat2" Type="varchar" MaxLength="400" />
+          <Property Name="Nomor_Telepon" Type="varchar" MaxLength="70" />
+          <Property Name="Agama" Type="varchar" MaxLength="10" />
+          <Property Name="Pendidikan" Type="varchar" MaxLength="50" />
+          <Property Name="Tanggal_Kerja" Type="datetime" />
+          <Property Name="Tanggal_Diangkat" Type="datetime" />
+          <Property Name="Tanggal_Keluar" Type="datetime" />
+          <Property Name="Kode_Jabatan" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Kode_Departemen" Type="nvarchar" MaxLength="4" />
+          <Property Name="Nama_Seksi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nama_Cabang" Type="nvarchar" MaxLength="20" />
+          <Property Name="Status" Type="nvarchar" MaxLength="15" />
+          <Property Name="Nama_Pasangan" Type="nvarchar" MaxLength="20" />
+          <Property Name="Foto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nama_Ibu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nama_Bapak" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nomor_KTP" Type="nvarchar" MaxLength="30" />
+          <Property Name="Alasan_Keluar" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status_Kerja" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tinggi_Badan" Type="nvarchar" MaxLength="20" />
+          <Property Name="Berat_Badan" Type="nvarchar" MaxLength="20" />
+          <Property Name="Golongan_Darah" Type="nvarchar" MaxLength="2" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tingkat_Pendidikan" Type="nvarchar" MaxLength="4" />
+          <Property Name="Nomor_Urut" Type="nvarchar" MaxLength="4" />
+          <Property Name="Kategori" Type="nvarchar" MaxLength="17" />
+          <Property Name="Jabatan k3lh" Type="nvarchar" MaxLength="6" />
+          <Property Name="Bagian k3lh" Type="nvarchar" MaxLength="6" />
+          <Property Name="Unit k3lh" Type="nvarchar" MaxLength="6" />
+          <Property Name="Kode Bagian" Type="char" MaxLength="6" />
+          <Property Name="Tanggal Verifikasi" Type="smalldatetime" />
+          <Property Name="Tgl Sertifikasi MR" Type="smalldatetime" />
+          <Property Name="No Sertifikat MR" Type="varchar" MaxLength="20" />
+          <Property Name="UserID" Type="varchar" MaxLength="20" />
+          <Property Name="Pwd" Type="varchar" MaxLength="20" />
+          <Property Name="Aktif" Type="smallint" />
+          <Property Name="NIK_Atasan" Type="char" MaxLength="5" />
+          <Property Name="No_Peserta_DPLK" Type="char" MaxLength="15" />
+          <Property Name="No_Kartu_DPLK" Type="char" MaxLength="12" />
+          <Property Name="Awal_Kepesertaan" Type="smalldatetime" />
+          <Property Name="Akhir_Kepesertaan" Type="smalldatetime" />
+          <Property Name="Keterangan" Type="varchar" MaxLength="100" />
+          <Property Name="Nama_DPLK" Type="varchar" MaxLength="25" />
+          <Property Name="NPWP" Type="char" MaxLength="15" />
+          <Property Name="ANGGOTA_SP" Type="varchar" MaxLength="50" />
+          <Property Name="IURAN_SP" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TUNJANGAN_ISTRI" Type="int" />
+          <Property Name="TUNJANGAN_ANAK" Type="int" />
+          <Property Name="S_OR_M" Type="int" />
+          <Property Name="JML_ANAK_PPH" Type="int" />
+          <Property Name="STRATEGIC_ALLOWANCE" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="FASILITAS_KENDARAAN" Type="int" />
+          <Property Name="Attandance" Type="int" />
+          <Property Name="PIN" Type="char" MaxLength="6" />
+          <Property Name="Warga_Negara" Type="varchar" MaxLength="50" />
+          <Property Name="No_Handphone" Type="varchar" MaxLength="50" />
+          <Property Name="Status_Tempat_Tinggal" Type="varchar" MaxLength="50" />
+          <Property Name="Alamat_Darurat" Type="varchar" MaxLength="100" />
+          <Property Name="No_Telepon_Darurat" Type="varchar" MaxLength="50" />
+          <Property Name="No_Handphone_Darurat" Type="varchar" MaxLength="50" />
+          <Property Name="Nama_Yang_Dihubungi" Type="varchar" MaxLength="50" />
+          <Property Name="Hubungan_Keluarga" Type="varchar" MaxLength="50" />
+          <Property Name="Status_Pernikahan" Type="varchar" MaxLength="50" />
+          <Property Name="No_Identitas_Diri" Type="varchar" MaxLength="50" />
+          <Property Name="Masa_Berlaku_Identitas_Diri" Type="smalldatetime" />
+          <Property Name="Tempat_Lahir_Bapak" Type="varchar" MaxLength="50" />
+          <Property Name="Tempat_Lahir_Ibu" Type="varchar" MaxLength="50" />
+          <Property Name="Tanggal_Lahir_Bapak" Type="smalldatetime" />
+          <Property Name="Tanggal_Lahir_Ibu" Type="smalldatetime" />
+          <Property Name="Alamat_Bapak" Type="varchar" MaxLength="100" />
+          <Property Name="Alamat_Ibu" Type="varchar" MaxLength="100" />
+          <Property Name="Pekerjaan_Bapak" Type="varchar" MaxLength="50" />
+          <Property Name="Pekerjaan_Ibu" Type="varchar" MaxLength="50" />
+          <Property Name="Jabatan_Penugasan" Type="varchar" MaxLength="50" />
+          <Property Name="Status_Aktif" Type="int" />
+          <Property Name="Alasan_Non_Aktif" Type="varchar" MaxLength="50" />
+          <Property Name="No_Ref_Job_Desc" Type="varchar" MaxLength="50" />
+          <Property Name="Revisi_Job_Desc_Ke" Type="int" />
+          <Property Name="Tgl_Berlaku_Job_Desc" Type="char" MaxLength="10" />
+          <Property Name="Nama_File_Job_Desc" Type="varchar" MaxLength="100" />
+          <Property Name="Fasilitas" Type="int" />
+          <Property Name="Alasan_Keluar2" Type="varchar" MaxLength="250" />
+          <Property Name="Kode_Divisi" Type="varchar" MaxLength="10" />
+          <Property Name="Email2" Type="varchar" MaxLength="50" />
+          <Property Name="ProfilePicture" Type="text" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'hrd.dbo.All_Karyawan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="All_Karyawan">
+          <Key>
+            <PropertyRef Name="Nomor Induk" />
+            <PropertyRef Name="Kode_Headquarter" />
+            <PropertyRef Name="Kode_Departemen" />
+            <PropertyRef Name="Kode_Jabatan" />
+          </Key>
+          <Property Name="Nomor Induk" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Nama" Type="varchar" MaxLength="50" />
+          <Property Name="Kode_Headquarter" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Kode_Departemen" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Nama_Seksi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kode Bagian" Type="char" MaxLength="6" />
+          <Property Name="Nama Bagian" Type="varchar" MaxLength="50" />
+          <Property Name="Singkatan Bagian" Type="varchar" MaxLength="10" />
+          <Property Name="Status_Aktif" Type="int" />
+          <Property Name="Kode_Jabatan" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Nama_Departemen" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kode_Level" Type="int" />
+          <Property Name="Nama_Cabang" Type="nvarchar" MaxLength="20" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="id_data" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'hrd.dbo.tuser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tuser">
+          <Key>
+            <PropertyRef Name="uName" />
+            <PropertyRef Name="uPwd" />
+            <PropertyRef Name="Kode Bagian" />
+            <PropertyRef Name="Nomor Induk" />
+            <PropertyRef Name="Kode Level" />
+            <PropertyRef Name="Pesan" />
+            <PropertyRef Name="sec_user_id" />
+          </Key>
+          <Property Name="uName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="uPwd" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kode Bagian" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Nomor Induk" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Kode Level" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="Nama Seksi" Type="varchar" MaxLength="25" />
+          <Property Name="Departemen" Type="varchar" MaxLength="25" />
+          <Property Name="Level No" Type="int" />
+          <Property Name="Status Aktif" Type="int" />
+          <Property Name="Last Login" Type="smalldatetime" />
+          <Property Name="Headquarter" Type="char" MaxLength="4" />
+          <Property Name="Pesan" Type="smallint" Nullable="false" />
+          <Property Name="Desktop App" Type="smallint" />
+          <Property Name="Web App" Type="smallint" />
+          <Property Name="Kode Office" Type="char" MaxLength="4" />
+          <Property Name="userPwd" Type="varchar" MaxLength="50" />
+          <Property Name="Min_Panjang_Pwd" Type="int" />
+          <Property Name="Terakhir_Ganti_Pwd" Type="datetime" />
+          <Property Name="Lama_Ganti_Pwd" Type="int" />
+          <Property Name="Email_Address" Type="varchar" MaxLength="50" />
+          <Property Name="last_login_decision" Type="smalldatetime" />
+          <Property Name="user_right" Type="int" />
+          <Property Name="sec_user_id" Type="int" Nullable="false" />
+          <Property Name="sec_role_id" Type="int" />
+          <Property Name="status_id" Type="int" />
+          <Property Name="count_wrong_password" Type="int" />
+          <Property Name="section_id" Type="int" />
+        </EntityType>
+        <Association Name="FK_Departemen_HeadQuarter">
+          <End Role="HeadQuarter" Type="Self.HeadQuarter" Multiplicity="0..1" />
+          <End Role="Departemen" Type="Self.Departemen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HeadQuarter">
+              <PropertyRef Name="Kode_Headquarter" />
+            </Principal>
+            <Dependent Role="Departemen">
+              <PropertyRef Name="Kode_Headquarter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Karyawan_Departemen">
+          <End Role="Departemen" Type="Self.Departemen" Multiplicity="0..1" />
+          <End Role="Karyawan" Type="Self.Karyawan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departemen">
+              <PropertyRef Name="Kode_Departemen" />
+            </Principal>
+            <Dependent Role="Karyawan">
+              <PropertyRef Name="Kode_Departemen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SF_HRDContextDBStoreContainer">
+          <EntitySet Name="Bagian" EntityType="Self.Bagian" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departemen" EntityType="Self.Departemen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HeadQuarter" EntityType="Self.HeadQuarter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jabatan" EntityType="Self.Jabatan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Karyawan" EntityType="Self.Karyawan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="All_Karyawan" EntityType="Self.All_Karyawan" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [All_Karyawan].[Nomor Induk] AS [Nomor Induk], 
+    [All_Karyawan].[Nama] AS [Nama], 
+    [All_Karyawan].[Kode_Headquarter] AS [Kode_Headquarter], 
+    [All_Karyawan].[Kode_Departemen] AS [Kode_Departemen], 
+    [All_Karyawan].[Nama_Seksi] AS [Nama_Seksi], 
+    [All_Karyawan].[Kode Bagian] AS [Kode Bagian], 
+    [All_Karyawan].[Nama Bagian] AS [Nama Bagian], 
+    [All_Karyawan].[Singkatan Bagian] AS [Singkatan Bagian], 
+    [All_Karyawan].[Status_Aktif] AS [Status_Aktif], 
+    [All_Karyawan].[Kode_Jabatan] AS [Kode_Jabatan], 
+    [All_Karyawan].[Nama_Departemen] AS [Nama_Departemen], 
+    [All_Karyawan].[Email] AS [Email], 
+    [All_Karyawan].[Kode_Level] AS [Kode_Level], 
+    [All_Karyawan].[Nama_Cabang] AS [Nama_Cabang], 
+    [All_Karyawan].[ParentID] AS [ParentID], 
+    [All_Karyawan].[id_data] AS [id_data]
+    FROM [dbo].[All_Karyawan] AS [All_Karyawan]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tuser" EntityType="Self.tuser" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tuser].[uName] AS [uName], 
+    [tuser].[uPwd] AS [uPwd], 
+    [tuser].[Kode Bagian] AS [Kode Bagian], 
+    [tuser].[Nomor Induk] AS [Nomor Induk], 
+    [tuser].[Kode Level] AS [Kode Level], 
+    [tuser].[Nama Seksi] AS [Nama Seksi], 
+    [tuser].[Departemen] AS [Departemen], 
+    [tuser].[Level No] AS [Level No], 
+    [tuser].[Status Aktif] AS [Status Aktif], 
+    [tuser].[Last Login] AS [Last Login], 
+    [tuser].[Headquarter] AS [Headquarter], 
+    [tuser].[Pesan] AS [Pesan], 
+    [tuser].[Desktop App] AS [Desktop App], 
+    [tuser].[Web App] AS [Web App], 
+    [tuser].[Kode Office] AS [Kode Office], 
+    [tuser].[userPwd] AS [userPwd], 
+    [tuser].[Min_Panjang_Pwd] AS [Min_Panjang_Pwd], 
+    [tuser].[Terakhir_Ganti_Pwd] AS [Terakhir_Ganti_Pwd], 
+    [tuser].[Lama_Ganti_Pwd] AS [Lama_Ganti_Pwd], 
+    [tuser].[Email_Address] AS [Email_Address], 
+    [tuser].[last_login_decision] AS [last_login_decision], 
+    [tuser].[user_right] AS [user_right], 
+    [tuser].[sec_user_id] AS [sec_user_id], 
+    [tuser].[sec_role_id] AS [sec_role_id], 
+    [tuser].[status_id] AS [status_id], 
+    [tuser].[count_wrong_password] AS [count_wrong_password], 
+    [tuser].[section_id] AS [section_id]
+    FROM [dbo].[tuser] AS [tuser]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Departemen_HeadQuarter" Association="Self.FK_Departemen_HeadQuarter">
+            <End Role="HeadQuarter" EntitySet="HeadQuarter" />
+            <End Role="Departemen" EntitySet="Departemen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Karyawan_Departemen" Association="Self.FK_Karyawan_Departemen">
+            <End Role="Departemen" EntitySet="Departemen" />
+            <End Role="Karyawan" EntitySet="Karyawan" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SF_HRDContextDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="hrdEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="All_Karyawan" EntityType="SF_HRDContextDB.All_Karyawan" />
+          <EntitySet Name="tusers" EntityType="SF_HRDContextDB.tuser" />
+          <EntitySet Name="Bagians" EntityType="SF_HRDContextDB.Bagian" />
+          <EntitySet Name="Departemen" EntityType="SF_HRDContextDB.Departeman" />
+          <EntitySet Name="HeadQuarters" EntityType="SF_HRDContextDB.HeadQuarter" />
+          <EntitySet Name="Jabatans" EntityType="SF_HRDContextDB.Jabatan" />
+          <EntitySet Name="Karyawans" EntityType="SF_HRDContextDB.Karyawan" />
+          <AssociationSet Name="FK_Departemen_HeadQuarter" Association="SF_HRDContextDB.FK_Departemen_HeadQuarter">
+            <End Role="HeadQuarter" EntitySet="HeadQuarters" />
+            <End Role="Departeman" EntitySet="Departemen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Karyawan_Departemen" Association="SF_HRDContextDB.FK_Karyawan_Departemen">
+            <End Role="Departeman" EntitySet="Departemen" />
+            <End Role="Karyawan" EntitySet="Karyawans" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="All_Karyawan">
+          <Key>
+            <PropertyRef Name="Nomor_Induk" />
+            <PropertyRef Name="Kode_Headquarter" />
+            <PropertyRef Name="Kode_Departemen" />
+            <PropertyRef Name="Kode_Jabatan" />
+          </Key>
+          <Property Name="Nomor_Induk" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kode_Headquarter" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Kode_Departemen" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_Seksi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kode_Bagian" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Nama_Bagian" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Singkatan_Bagian" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Status_Aktif" Type="Int32" />
+          <Property Name="Kode_Jabatan" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_Departemen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kode_Level" Type="Int32" />
+          <Property Name="Nama_Cabang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="id_data" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tuser">
+          <Key>
+            <PropertyRef Name="uName" />
+            <PropertyRef Name="uPwd" />
+            <PropertyRef Name="Kode_Bagian" />
+            <PropertyRef Name="Nomor_Induk" />
+            <PropertyRef Name="Kode_Level" />
+            <PropertyRef Name="Pesan" />
+            <PropertyRef Name="sec_user_id" />
+          </Key>
+          <Property Name="uName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="uPwd" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kode_Bagian" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Nomor_Induk" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Kode_Level" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Nama_Seksi" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Departemen" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Level_No" Type="Int32" />
+          <Property Name="Status_Aktif" Type="Int32" />
+          <Property Name="Last_Login" Type="DateTime" Precision="0" />
+          <Property Name="Headquarter" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="Pesan" Type="Int16" Nullable="false" />
+          <Property Name="Desktop_App" Type="Int16" />
+          <Property Name="Web_App" Type="Int16" />
+          <Property Name="Kode_Office" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="userPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Min_Panjang_Pwd" Type="Int32" />
+          <Property Name="Terakhir_Ganti_Pwd" Type="DateTime" Precision="3" />
+          <Property Name="Lama_Ganti_Pwd" Type="Int32" />
+          <Property Name="Email_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_login_decision" Type="DateTime" Precision="0" />
+          <Property Name="user_right" Type="Int32" />
+          <Property Name="sec_user_id" Type="Int32" Nullable="false" />
+          <Property Name="sec_role_id" Type="Int32" />
+          <Property Name="status_id" Type="Int32" />
+          <Property Name="count_wrong_password" Type="Int32" />
+          <Property Name="section_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bagian">
+          <Key>
+            <PropertyRef Name="Kode_Bagian" />
+          </Key>
+          <Property Name="Kode_Bagian" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Nama_Bagian" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Singkatan_Bagian" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Kode_Seksi" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="hq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Departeman">
+          <Key>
+            <PropertyRef Name="Kode_Departemen" />
+          </Key>
+          <Property Name="Kode_Departemen" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_Departemen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kode_Headquarter" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="NIK" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="kd_dept_asal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nama_dept_asal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kd_hq_asal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="kd_hq_contrary" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="IndexID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="Int32" />
+          <Property Name="Disabled" Type="Int32" />
+          <NavigationProperty Name="HeadQuarter" Relationship="SF_HRDContextDB.FK_Departemen_HeadQuarter" FromRole="Departeman" ToRole="HeadQuarter" />
+          <NavigationProperty Name="Karyawans" Relationship="SF_HRDContextDB.FK_Karyawan_Departemen" FromRole="Departeman" ToRole="Karyawan" />
+        </EntityType>
+        <EntityType Name="HeadQuarter">
+          <Key>
+            <PropertyRef Name="Kode_Headquarter" />
+          </Key>
+          <Property Name="Kode_Headquarter" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_Headquarter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NIK" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Departemen" Relationship="SF_HRDContextDB.FK_Departemen_HeadQuarter" FromRole="HeadQuarter" ToRole="Departeman" />
+        </EntityType>
+        <EntityType Name="Jabatan">
+          <Key>
+            <PropertyRef Name="Kode_Jabatan" />
+          </Key>
+          <Property Name="Kode_Jabatan" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_Jabatan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Kode_Level" Type="Int32" />
+          <Property Name="Tunjangan" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Nama_Level" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Level_Approval" Type="Int32" />
+          <Property Name="Nama_Jabatan2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Disabled" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Karyawan">
+          <Key>
+            <PropertyRef Name="Nomor_Induk" />
+          </Key>
+          <Property Name="Nomor_Induk" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TitelBelakang" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nomor_Astek" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Jenis_Kelamin" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="Tempat_Lahir" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Tanggal_Lahir" Type="DateTime" Precision="3" />
+          <Property Name="Alamat" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="Alamat2" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="Nomor_Telepon" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Agama" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pendidikan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tanggal_Kerja" Type="DateTime" Precision="3" />
+          <Property Name="Tanggal_Diangkat" Type="DateTime" Precision="3" />
+          <Property Name="Tanggal_Keluar" Type="DateTime" Precision="3" />
+          <Property Name="Kode_Jabatan" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Kode_Departemen" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_Seksi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_Cabang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_Pasangan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_Ibu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nama_Bapak" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nomor_KTP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Alasan_Keluar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Kerja" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tinggi_Badan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Berat_Badan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Golongan_Darah" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tingkat_Pendidikan" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Nomor_Urut" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Kategori" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+          <Property Name="Jabatan_k3lh" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Bagian_k3lh" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Unit_k3lh" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Kode_Bagian" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Tanggal_Verifikasi" Type="DateTime" Precision="0" />
+          <Property Name="Tgl_Sertifikasi_MR" Type="DateTime" Precision="0" />
+          <Property Name="No_Sertifikat_MR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Pwd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Aktif" Type="Int16" />
+          <Property Name="NIK_Atasan" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="No_Peserta_DPLK" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="No_Kartu_DPLK" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="Awal_Kepesertaan" Type="DateTime" Precision="0" />
+          <Property Name="Akhir_Kepesertaan" Type="DateTime" Precision="0" />
+          <Property Name="Keterangan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nama_DPLK" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NPWP" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="ANGGOTA_SP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IURAN_SP" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TUNJANGAN_ISTRI" Type="Int32" />
+          <Property Name="TUNJANGAN_ANAK" Type="Int32" />
+          <Property Name="S_OR_M" Type="Int32" />
+          <Property Name="JML_ANAK_PPH" Type="Int32" />
+          <Property Name="STRATEGIC_ALLOWANCE" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FASILITAS_KENDARAAN" Type="Int32" />
+          <Property Name="Attandance" Type="Int32" />
+          <Property Name="PIN" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Warga_Negara" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="No_Handphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status_Tempat_Tinggal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Alamat_Darurat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="No_Telepon_Darurat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="No_Handphone_Darurat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nama_Yang_Dihubungi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Hubungan_Keluarga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status_Pernikahan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="No_Identitas_Diri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Masa_Berlaku_Identitas_Diri" Type="DateTime" Precision="0" />
+          <Property Name="Tempat_Lahir_Bapak" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tempat_Lahir_Ibu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tanggal_Lahir_Bapak" Type="DateTime" Precision="0" />
+          <Property Name="Tanggal_Lahir_Ibu" Type="DateTime" Precision="0" />
+          <Property Name="Alamat_Bapak" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Alamat_Ibu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pekerjaan_Bapak" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Pekerjaan_Ibu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Jabatan_Penugasan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status_Aktif" Type="Int32" />
+          <Property Name="Alasan_Non_Aktif" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="No_Ref_Job_Desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Revisi_Job_Desc_Ke" Type="Int32" />
+          <Property Name="Tgl_Berlaku_Job_Desc" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Nama_File_Job_Desc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Fasilitas" Type="Int32" />
+          <Property Name="Alasan_Keluar2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Kode_Divisi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Email2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProfilePicture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Departeman" Relationship="SF_HRDContextDB.FK_Karyawan_Departemen" FromRole="Karyawan" ToRole="Departeman" />
+        </EntityType>
+        <Association Name="FK_Departemen_HeadQuarter">
+          <End Type="SF_HRDContextDB.HeadQuarter" Role="HeadQuarter" Multiplicity="0..1" />
+          <End Type="SF_HRDContextDB.Departeman" Role="Departeman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HeadQuarter">
+              <PropertyRef Name="Kode_Headquarter" />
+            </Principal>
+            <Dependent Role="Departeman">
+              <PropertyRef Name="Kode_Headquarter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Karyawan_Departemen">
+          <End Type="SF_HRDContextDB.Departeman" Role="Departeman" Multiplicity="0..1" />
+          <End Type="SF_HRDContextDB.Karyawan" Role="Karyawan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departeman">
+              <PropertyRef Name="Kode_Departemen" />
+            </Principal>
+            <Dependent Role="Karyawan">
+              <PropertyRef Name="Kode_Departemen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SF_HRDContextDBStoreContainer" CdmEntityContainer="hrdEntities">
+          <EntitySetMapping Name="All_Karyawan">
+            <EntityTypeMapping TypeName="SF_HRDContextDB.All_Karyawan">
+              <MappingFragment StoreEntitySet="All_Karyawan">
+                <ScalarProperty Name="id_data" ColumnName="id_data" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="Nama_Cabang" ColumnName="Nama_Cabang" />
+                <ScalarProperty Name="Kode_Level" ColumnName="Kode_Level" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nama_Departemen" ColumnName="Nama_Departemen" />
+                <ScalarProperty Name="Kode_Jabatan" ColumnName="Kode_Jabatan" />
+                <ScalarProperty Name="Status_Aktif" ColumnName="Status_Aktif" />
+                <ScalarProperty Name="Singkatan_Bagian" ColumnName="Singkatan Bagian" />
+                <ScalarProperty Name="Nama_Bagian" ColumnName="Nama Bagian" />
+                <ScalarProperty Name="Kode_Bagian" ColumnName="Kode Bagian" />
+                <ScalarProperty Name="Nama_Seksi" ColumnName="Nama_Seksi" />
+                <ScalarProperty Name="Kode_Departemen" ColumnName="Kode_Departemen" />
+                <ScalarProperty Name="Kode_Headquarter" ColumnName="Kode_Headquarter" />
+                <ScalarProperty Name="Nama" ColumnName="Nama" />
+                <ScalarProperty Name="Nomor_Induk" ColumnName="Nomor Induk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tusers">
+            <EntityTypeMapping TypeName="SF_HRDContextDB.tuser">
+              <MappingFragment StoreEntitySet="tuser">
+                <ScalarProperty Name="section_id" ColumnName="section_id" />
+                <ScalarProperty Name="count_wrong_password" ColumnName="count_wrong_password" />
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="sec_role_id" ColumnName="sec_role_id" />
+                <ScalarProperty Name="sec_user_id" ColumnName="sec_user_id" />
+                <ScalarProperty Name="user_right" ColumnName="user_right" />
+                <ScalarProperty Name="last_login_decision" ColumnName="last_login_decision" />
+                <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+                <ScalarProperty Name="Lama_Ganti_Pwd" ColumnName="Lama_Ganti_Pwd" />
+                <ScalarProperty Name="Terakhir_Ganti_Pwd" ColumnName="Terakhir_Ganti_Pwd" />
+                <ScalarProperty Name="Min_Panjang_Pwd" ColumnName="Min_Panjang_Pwd" />
+                <ScalarProperty Name="userPwd" ColumnName="userPwd" />
+                <ScalarProperty Name="Kode_Office" ColumnName="Kode Office" />
+                <ScalarProperty Name="Web_App" ColumnName="Web App" />
+                <ScalarProperty Name="Desktop_App" ColumnName="Desktop App" />
+                <ScalarProperty Name="Pesan" ColumnName="Pesan" />
+                <ScalarProperty Name="Headquarter" ColumnName="Headquarter" />
+                <ScalarProperty Name="Last_Login" ColumnName="Last Login" />
+                <ScalarProperty Name="Status_Aktif" ColumnName="Status Aktif" />
+                <ScalarProperty Name="Level_No" ColumnName="Level No" />
+                <ScalarProperty Name="Departemen" ColumnName="Departemen" />
+                <ScalarProperty Name="Nama_Seksi" ColumnName="Nama Seksi" />
+                <ScalarProperty Name="Kode_Level" ColumnName="Kode Level" />
+                <ScalarProperty Name="Nomor_Induk" ColumnName="Nomor Induk" />
+                <ScalarProperty Name="Kode_Bagian" ColumnName="Kode Bagian" />
+                <ScalarProperty Name="uPwd" ColumnName="uPwd" />
+                <ScalarProperty Name="uName" ColumnName="uName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bagians">
+            <EntityTypeMapping TypeName="SF_HRDContextDB.Bagian">
+              <MappingFragment StoreEntitySet="Bagian">
+                <ScalarProperty Name="hq" ColumnName="hq" />
+                <ScalarProperty Name="Kode_Seksi" ColumnName="Kode Seksi" />
+                <ScalarProperty Name="Singkatan_Bagian" ColumnName="Singkatan Bagian" />
+                <ScalarProperty Name="Nama_Bagian" ColumnName="Nama Bagian" />
+                <ScalarProperty Name="Kode_Bagian" ColumnName="Kode Bagian" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departemen">
+            <EntityTypeMapping TypeName="SF_HRDContextDB.Departeman">
+              <MappingFragment StoreEntitySet="Departemen">
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="IndexID" ColumnName="IndexID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="kd_hq_contrary" ColumnName="kd_hq_contrary" />
+                <ScalarProperty Name="kd_hq_asal" ColumnName="kd_hq_asal" />
+                <ScalarProperty Name="nama_dept_asal" ColumnName="nama_dept_asal" />
+                <ScalarProperty Name="kd_dept_asal" ColumnName="kd_dept_asal" />
+                <ScalarProperty Name="NIK" ColumnName="NIK" />
+                <ScalarProperty Name="Kode_Headquarter" ColumnName="Kode_Headquarter" />
+                <ScalarProperty Name="Nama_Departemen" ColumnName="Nama_Departemen" />
+                <ScalarProperty Name="Kode_Departemen" ColumnName="Kode_Departemen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HeadQuarters">
+            <EntityTypeMapping TypeName="SF_HRDContextDB.HeadQuarter">
+              <MappingFragment StoreEntitySet="HeadQuarter">
+                <ScalarProperty Name="NIK" ColumnName="NIK" />
+                <ScalarProperty Name="Nama_Headquarter" ColumnName="Nama_Headquarter" />
+                <ScalarProperty Name="Kode_Headquarter" ColumnName="Kode_Headquarter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jabatans">
+            <EntityTypeMapping TypeName="SF_HRDContextDB.Jabatan">
+              <MappingFragment StoreEntitySet="Jabatan">
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="Nama_Jabatan2" ColumnName="Nama_Jabatan2" />
+                <ScalarProperty Name="Level_Approval" ColumnName="Level_Approval" />
+                <ScalarProperty Name="Nama_Level" ColumnName="Nama_Level" />
+                <ScalarProperty Name="Tunjangan" ColumnName="Tunjangan" />
+                <ScalarProperty Name="Kode_Level" ColumnName="Kode_Level" />
+                <ScalarProperty Name="Nama_Jabatan" ColumnName="Nama_Jabatan" />
+                <ScalarProperty Name="Kode_Jabatan" ColumnName="Kode_Jabatan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Karyawans">
+            <EntityTypeMapping TypeName="SF_HRDContextDB.Karyawan">
+              <MappingFragment StoreEntitySet="Karyawan">
+                <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+                <ScalarProperty Name="Kode_Divisi" ColumnName="Kode_Divisi" />
+                <ScalarProperty Name="Alasan_Keluar2" ColumnName="Alasan_Keluar2" />
+                <ScalarProperty Name="Fasilitas" ColumnName="Fasilitas" />
+                <ScalarProperty Name="Nama_File_Job_Desc" ColumnName="Nama_File_Job_Desc" />
+                <ScalarProperty Name="Tgl_Berlaku_Job_Desc" ColumnName="Tgl_Berlaku_Job_Desc" />
+                <ScalarProperty Name="Revisi_Job_Desc_Ke" ColumnName="Revisi_Job_Desc_Ke" />
+                <ScalarProperty Name="No_Ref_Job_Desc" ColumnName="No_Ref_Job_Desc" />
+                <ScalarProperty Name="Alasan_Non_Aktif" ColumnName="Alasan_Non_Aktif" />
+                <ScalarProperty Name="Status_Aktif" ColumnName="Status_Aktif" />
+                <ScalarProperty Name="Jabatan_Penugasan" ColumnName="Jabatan_Penugasan" />
+                <ScalarProperty Name="Pekerjaan_Ibu" ColumnName="Pekerjaan_Ibu" />
+                <ScalarProperty Name="Pekerjaan_Bapak" ColumnName="Pekerjaan_Bapak" />
+                <ScalarProperty Name="Alamat_Ibu" ColumnName="Alamat_Ibu" />
+                <ScalarProperty Name="Alamat_Bapak" ColumnName="Alamat_Bapak" />
+                <ScalarProperty Name="Tanggal_Lahir_Ibu" ColumnName="Tanggal_Lahir_Ibu" />
+                <ScalarProperty Name="Tanggal_Lahir_Bapak" ColumnName="Tanggal_Lahir_Bapak" />
+                <ScalarProperty Name="Tempat_Lahir_Ibu" ColumnName="Tempat_Lahir_Ibu" />
+                <ScalarProperty Name="Tempat_Lahir_Bapak" ColumnName="Tempat_Lahir_Bapak" />
+                <ScalarProperty Name="Masa_Berlaku_Identitas_Diri" ColumnName="Masa_Berlaku_Identitas_Diri" />
+                <ScalarProperty Name="No_Identitas_Diri" ColumnName="No_Identitas_Diri" />
+                <ScalarProperty Name="Status_Pernikahan" ColumnName="Status_Pernikahan" />
+                <ScalarProperty Name="Hubungan_Keluarga" ColumnName="Hubungan_Keluarga" />
+                <ScalarProperty Name="Nama_Yang_Dihubungi" ColumnName="Nama_Yang_Dihubungi" />
+                <ScalarProperty Name="No_Handphone_Darurat" ColumnName="No_Handphone_Darurat" />
+                <ScalarProperty Name="No_Telepon_Darurat" ColumnName="No_Telepon_Darurat" />
+                <ScalarProperty Name="Alamat_Darurat" ColumnName="Alamat_Darurat" />
+                <ScalarProperty Name="Status_Tempat_Tinggal" ColumnName="Status_Tempat_Tinggal" />
+                <ScalarProperty Name="No_Handphone" ColumnName="No_Handphone" />
+                <ScalarProperty Name="Warga_Negara" ColumnName="Warga_Negara" />
+                <ScalarProperty Name="PIN" ColumnName="PIN" />
+                <ScalarProperty Name="Attandance" ColumnName="Attandance" />
+                <ScalarProperty Name="FASILITAS_KENDARAAN" ColumnName="FASILITAS_KENDARAAN" />
+                <ScalarProperty Name="STRATEGIC_ALLOWANCE" ColumnName="STRATEGIC_ALLOWANCE" />
+                <ScalarProperty Name="JML_ANAK_PPH" ColumnName="JML_ANAK_PPH" />
+                <ScalarProperty Name="S_OR_M" ColumnName="S_OR_M" />
+                <ScalarProperty Name="TUNJANGAN_ANAK" ColumnName="TUNJANGAN_ANAK" />
+                <ScalarProperty Name="TUNJANGAN_ISTRI" ColumnName="TUNJANGAN_ISTRI" />
+                <ScalarProperty Name="IURAN_SP" ColumnName="IURAN_SP" />
+                <ScalarProperty Name="ANGGOTA_SP" ColumnName="ANGGOTA_SP" />
+                <ScalarProperty Name="NPWP" ColumnName="NPWP" />
+                <ScalarProperty Name="Nama_DPLK" ColumnName="Nama_DPLK" />
+                <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+                <ScalarProperty Name="Akhir_Kepesertaan" ColumnName="Akhir_Kepesertaan" />
+                <ScalarProperty Name="Awal_Kepesertaan" ColumnName="Awal_Kepesertaan" />
+                <ScalarProperty Name="No_Kartu_DPLK" ColumnName="No_Kartu_DPLK" />
+                <ScalarProperty Name="No_Peserta_DPLK" ColumnName="No_Peserta_DPLK" />
+                <ScalarProperty Name="NIK_Atasan" ColumnName="NIK_Atasan" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="No_Sertifikat_MR" ColumnName="No Sertifikat MR" />
+                <ScalarProperty Name="Tgl_Sertifikasi_MR" ColumnName="Tgl Sertifikasi MR" />
+                <ScalarProperty Name="Tanggal_Verifikasi" ColumnName="Tanggal Verifikasi" />
+                <ScalarProperty Name="Kode_Bagian" ColumnName="Kode Bagian" />
+                <ScalarProperty Name="Unit_k3lh" ColumnName="Unit k3lh" />
+                <ScalarProperty Name="Bagian_k3lh" ColumnName="Bagian k3lh" />
+                <ScalarProperty Name="Jabatan_k3lh" ColumnName="Jabatan k3lh" />
+                <ScalarProperty Name="Kategori" ColumnName="Kategori" />
+                <ScalarProperty Name="Nomor_Urut" ColumnName="Nomor_Urut" />
+                <ScalarProperty Name="Tingkat_Pendidikan" ColumnName="Tingkat_Pendidikan" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Golongan_Darah" ColumnName="Golongan_Darah" />
+                <ScalarProperty Name="Berat_Badan" ColumnName="Berat_Badan" />
+                <ScalarProperty Name="Tinggi_Badan" ColumnName="Tinggi_Badan" />
+                <ScalarProperty Name="Status_Kerja" ColumnName="Status_Kerja" />
+                <ScalarProperty Name="Alasan_Keluar" ColumnName="Alasan_Keluar" />
+                <ScalarProperty Name="Nomor_KTP" ColumnName="Nomor_KTP" />
+                <ScalarProperty Name="Nama_Bapak" ColumnName="Nama_Bapak" />
+                <ScalarProperty Name="Nama_Ibu" ColumnName="Nama_Ibu" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="Nama_Pasangan" ColumnName="Nama_Pasangan" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Nama_Cabang" ColumnName="Nama_Cabang" />
+                <ScalarProperty Name="Nama_Seksi" ColumnName="Nama_Seksi" />
+                <ScalarProperty Name="Kode_Departemen" ColumnName="Kode_Departemen" />
+                <ScalarProperty Name="Kode_Jabatan" ColumnName="Kode_Jabatan" />
+                <ScalarProperty Name="Tanggal_Keluar" ColumnName="Tanggal_Keluar" />
+                <ScalarProperty Name="Tanggal_Diangkat" ColumnName="Tanggal_Diangkat" />
+                <ScalarProperty Name="Tanggal_Kerja" ColumnName="Tanggal_Kerja" />
+                <ScalarProperty Name="Pendidikan" ColumnName="Pendidikan" />
+                <ScalarProperty Name="Agama" ColumnName="Agama" />
+                <ScalarProperty Name="Nomor_Telepon" ColumnName="Nomor_Telepon" />
+                <ScalarProperty Name="Alamat2" ColumnName="Alamat2" />
+                <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+                <ScalarProperty Name="Tanggal_Lahir" ColumnName="Tanggal_Lahir" />
+                <ScalarProperty Name="Tempat_Lahir" ColumnName="Tempat_Lahir" />
+                <ScalarProperty Name="Jenis_Kelamin" ColumnName="Jenis_Kelamin" />
+                <ScalarProperty Name="Nomor_Astek" ColumnName="Nomor_Astek" />
+                <ScalarProperty Name="TitelBelakang" ColumnName="TitelBelakang" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Nama" ColumnName="Nama" />
+                <ScalarProperty Name="Nomor_Induk" ColumnName="Nomor_Induk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

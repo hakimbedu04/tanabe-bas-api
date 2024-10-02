@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b560e2ad52b84a158775fe50f0c789b7" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="SF_BASContextModel.t_visit" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_visit_product" Width="1.5" PointX="3" PointY="3.125" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_visit_product_topic" Width="1.5" PointX="5.25" PointY="3.125" />
+        <AssociationConnector Association="SF_BASContextModel.FK_t_visit_product_t_visit1" />
+        <AssociationConnector Association="SF_BASContextModel.FK_t_visit_product_topic_t_visit_product" />
+        <EntityTypeShape EntityType="SF_BASContextModel.C_parameter" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.log_login" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.All_Karyawan" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_bo" Width="1.5" PointX="9.625" PointY="7.625" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_customer_aso" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_doctor" Width="1.5" PointX="0.75" PointY="8.875" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_event" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_gl_cs" Width="1.5" PointX="8.375" PointY="11.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_info_feedback_mobile" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_product" Width="1.5" PointX="10.375" PointY="12.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_regional" Width="1.5" PointX="7.375" PointY="7.875" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_rep" Width="1.5" PointX="5.625" PointY="12.125" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_role" Width="1.5" PointX="3.375" PointY="13.625" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_sbo" Width="1.5" PointX="11.875" PointY="7" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_sponsor" Width="1.5" PointX="12.375" PointY="12.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_status" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_topic" Width="1.5" PointX="13.375" PointY="3.75" />
+        <AssociationConnector Association="SF_BASContextModel.FK_m_bo_m_regional1" />
+        <AssociationConnector Association="SF_BASContextModel.FK_m_sbo_m_bo" />
+        <AssociationConnector Association="SF_BASContextModel.FK_t_visit_m_doctor1" />
+        <AssociationConnector Association="SF_BASContextModel.FK_m_rep_m_role" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_expense_approval" Width="1.5" PointX="14.375" PointY="6.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_expense_attachment" Width="1.5" PointX="14.375" PointY="11.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_expense_detail" Width="1.5" PointX="14.375" PointY="14.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_gps_mobile" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_info_feedback_topic_mapping_mobile" Width="1.5" PointX="16.375" PointY="4.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_material_order" Width="1.5" PointX="16.375" PointY="7.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_sales" Width="1.5" PointX="3" PointY="19" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_sales_product" Width="1.5" PointX="5.25" PointY="19.375" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_sales_product_actual" Width="1.5" PointX="7.5" PointY="20.375" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_shift_log" Width="1.5" PointX="16.375" PointY="12.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_signature_mobile" Width="1.5" PointX="16.375" PointY="16.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_sp_approval" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_sp_attachment" Width="1.5" PointX="18.375" PointY="5.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.usermobile" Width="1.5" PointX="7.875" PointY="15.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_auth_sp" Width="1.5" PointX="18.375" PointY="8.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_doctor_sponsor" Width="1.5" PointX="18.375" PointY="11.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_expense" Width="1.5" PointX="20.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_info_feedback" Width="1.5" PointX="20.375" PointY="7.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_m_doctor" Width="1.5" PointX="10.375" PointY="20.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_product_price" Width="1.5" PointX="20.375" PointY="11.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_rep_admin" Width="1.5" PointX="16.375" PointY="20.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_rep_full" Width="1.5" PointX="18.375" PointY="20.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_rep_full_new" Width="1.5" PointX="20.375" PointY="19.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_sales_plan_2" Width="1.5" PointX="12.375" PointY="21.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_sales_product" Width="1.5" PointX="22.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_sp_product" Width="1.5" PointX="22.375" PointY="13.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_spr" Width="1.5" PointX="22.375" PointY="18.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_visit_plan" Width="1.5" PointX="7.375" PointY="23.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_visit_plan_mobile" Width="1.5" PointX="24.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_visit_plan_new" Width="1.5" PointX="24.375" PointY="8.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_visit_product" Width="1.5" PointX="14.375" PointY="24.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_visit_product_topic" Width="1.5" PointX="24.375" PointY="17.75" />
+        <AssociationConnector Association="SF_BASContextModel.FK_t_sales_m_doctor" />
+        <AssociationConnector Association="SF_BASContextModel.FK_usermobile_usermobile" />
+        <AssociationConnector Association="SF_BASContextModel.FK_t_sales_product_t_sales" />
+        <AssociationConnector Association="SF_BASContextModel.FK_t_sales_product_actual_t_sales_product" />
+        <EntityTypeShape EntityType="SF_BASContextModel.t_visit_associate" Width="1.5" PointX="24.375" PointY="21.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.v_visit_associate" Width="1.5" PointX="24.375" PointY="24.75" />
+        <EntityTypeShape EntityType="SF_BASContextModel.m_position" Width="1.5" PointX="0.75" PointY="25.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+    string _url = (@ViewBag.Path == null
+                        ? "~/Asset/Files/SP-Topics/no_available_image.jpg"
+                        : (
+                            @ViewBag.Path == "" ? "~/Asset/Files/SP-Topics/no_available_image.jpg" : @ViewBag.Path.Replace(" ", "%20")
+                           )
+                     );
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowTopicFiles</title>
+</head>
+<body>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td>
+                <center>
+                    @*<img src="~/Files/SP-Topics/herbe.png" width="100%" height="100%" />*@
+                    <img src=@Url.Content(_url) width="100%" height="100%" />
+                </center>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

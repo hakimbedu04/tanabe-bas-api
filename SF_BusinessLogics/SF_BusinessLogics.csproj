@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5B5A0A2-8663-44AC-A73A-BC5EF9A688F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SF_BusinessLogics</RootNamespace>
+    <AssemblyName>SF_BusinessLogics</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.15.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.15\lib\net45\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dashboard\DashboardBLL.cs" />
+    <Compile Include="Dashboard\IDashboardBLL.cs" />
+    <Compile Include="ErrLogs\IVTLogger.cs" />
+    <Compile Include="ErrLogs\VTLogger.cs" />
+    <Compile Include="GeneralExpense\GeneralExpense.cs" />
+    <Compile Include="GeneralExpense\IGeneralExpense.cs" />
+    <Compile Include="LoginBLL\ILoginBLL.cs" />
+    <Compile Include="LoginBLL\LoginBLL.cs" />
+    <Compile Include="Offline\IJsonFilesGenerator.cs" />
+    <Compile Include="Offline\JsonFilesGenerator.cs" />
+    <Compile Include="Offline\OfflineResponseModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SP\ISPActualBLL.cs" />
+    <Compile Include="SP\ISPPlanBLL.cs" />
+    <Compile Include="SP\ISPRealizationBLL.cs" />
+    <Compile Include="SP\ISPReportBLL.cs" />
+    <Compile Include="SP\SPActualBLL.cs" />
+    <Compile Include="SP\SPPlanBLL.cs" />
+    <Compile Include="SP\SPRealizationBLL.cs" />
+    <Compile Include="SP\SPReportBLL.cs" />
+    <Compile Include="User\IUserActualBLL.cs" />
+    <Compile Include="User\IUserHistoryBLL.cs" />
+    <Compile Include="User\IUserPlanBLL.cs" />
+    <Compile Include="User\IUserRealizationBLL.cs" />
+    <Compile Include="User\UserActualBLL.cs" />
+    <Compile Include="User\UserHisotryBLL.cs" />
+    <Compile Include="User\UserPlanBLL.cs" />
+    <Compile Include="User\UserRealizationBLL.cs" />
+    <Compile Include="Visit\IVisitBLL.cs" />
+    <Compile Include="Visit\VisitBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SF_DAL\SF_DAL.csproj">
+      <Project>{b8510f9d-b9f3-4fdc-b018-b6e5b363bac3}</Project>
+      <Name>SF_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SF_Domain\SF_Domain.csproj">
+      <Project>{4c7f4073-2820-47ca-823e-b9c504d294db}</Project>
+      <Name>SF_Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SF_Repositories\SF_Repositories.csproj">
+      <Project>{ddac5d63-2b84-4b37-abd8-386f429e3cd8}</Project>
+      <Name>SF_Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SF_Utils\SF_Utils.csproj">
+      <Project>{e27a89b7-da43-4ba1-8548-b89a7abb58eb}</Project>
+      <Name>SF_Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

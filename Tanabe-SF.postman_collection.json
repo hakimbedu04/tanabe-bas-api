@@ -1,0 +1,5344 @@
+{
+	"info": {
+		"_postman_id": "8fe8c775-ec2e-4906-bb69-3980815c286c",
+		"name": "Tanabe-SF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1858825",
+		"_collection_link": "https://red-resonance-535992.postman.co/workspace/My-Personal-Project~6639a158-be8e-4e42-86f3-abd02928398f/collection/1858825-8fe8c775-ec2e-4906-bb69-3980815c286c?action=share&source=collection_link&creator=1858825"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Username\":\"indra.sukma\",\n\t\"Password\":\"999999\",\n    \"hostname\" : \"bas_loan\",\n    \"ip_addressv4\" : \"192.168.100.206\",\n    \"ip_addressv6\" : \"\",\n    \"latitude\" : \"107.173922\",\n    \"longitude\" : \"-6.347052\",\n    \"address\" : \"Jl. Orange County Boulevard, Cibatu, Cikarang Sel., Kabupaten Bekasi, Jawa Barat 17530\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/Api/Login/LoginResult",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"Api",
+								"Login",
+								"LoginResult"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Username\":\"junianto\",\n\t\"Password\":\"999999\",\n    \"hostname\" : \"bas_loan\",\n    \"ip_addressv4\" : \"192.168.100.206\",\n    \"ip_addressv6\" : \"\",\n    \"latitude\" : \"107.173922\",\n    \"longitude\" : \"-6.347052\",\n    \"address\" : \"Jl. Orange County Boulevard, Cibatu, Cikarang Sel., Kabupaten Bekasi, Jawa Barat 17530\"\n}"
+						},
+						"url": {
+							"raw": "www.tanabe-sf.com/Api/Login/LoginResult",
+							"host": [
+								"www",
+								"tanabe-sf",
+								"com"
+							],
+							"path": [
+								"Api",
+								"Login",
+								"LoginResult"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProfilePicture",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+						},
+						"url": {
+							"raw": "{{local}}/Api/Login/GetProfilePicture",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"Api",
+								"Login",
+								"GetProfilePicture"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Visit Plan",
+			"item": [
+				{
+					"name": "Visit Index",
+					"item": [
+						{
+							"name": "DataViewPartial",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Day\": 0,\n    \"Month\": 7,\n    \"Year\": 2019,\n    \"PageIndex\": 1,\n    \"PageSize\" : 10,\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitPlan/DataViewPartial",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitPlan",
+										"DataViewPartial"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeletePlan",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"Auth\" : \"Rjf3UzWQQgU=\",\n\t\"VisitId\": \"V19119713\",\n\t\"Day\" : 3,\n\t\"Month\" : 7,\n\t\"Year\" : 2019,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitPlan/DeletePlan",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitPlan",
+										"DeletePlan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdatePlan",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\" : \"V19043835\",\n\t\"DrCode\" : \"308007\",\n\t\"OldDrCode\" : \"308004\",\n\t\"VisitDateTime\" : \"2019-03-22\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitPlan/UpdatePlan",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitPlan",
+										"UpdatePlan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "retrieve - DataViewPartialCustomCallback",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Day\": 0,\n    \"Month\": 5,\n    \"Year\": 2019,\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SearchColumn\": \"visit_id,dr_name\",\n    \"SearchValue\": \"V190438,RAT\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitPlan/DataViewPartialCustomCallback",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitPlan",
+										"DataViewPartialCustomCallback"
+									]
+								},
+								"description": "untuk action retrieve gunakan Prm = \"retrieve\" | selesai\nuntuk action export gunakan Prm = \"export\" | belum selesai\nuntuk action addvisit gunakan Prm = \"addvisit\" | belum selesai\nuntuk action requestverification gunakan Prm = \"request\" | selesai\n"
+							},
+							"response": []
+						},
+						{
+							"name": "request - DataViewPartialCustomCallback",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"request\",\n\t\"month\":5,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitPlan/DataViewPartialCustomCallback",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitPlan",
+										"DataViewPartialCustomCallback"
+									]
+								},
+								"description": "untuk action retrieve gunakan Prm = \"retrieve\" | selesai\nuntuk action export gunakan Prm = \"export\" | belum selesai\nuntuk action addvisit gunakan Prm = \"addvisit\" | belum selesai\nuntuk action requestverification gunakan Prm = \"request\" | selesai\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Summary Quadrant Doctor",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Day\": \"0\",\n    \"Month\": \"5\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"visit_date_plan\",\n    \"SortOrder\": \"ASC\",\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitPlan/SummaryDoctor",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitPlan",
+										"SummaryDoctor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Excel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Day\": 0,\n    \"Month\": 6,\n    \"Year\": 2019,\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SearchColumn\": \"\",\n    \"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitPlan/ExportToExcel",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitPlan",
+										"ExportToExcel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Pdf",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"73dweTPqJc4=\",\n    \"Day\": 0,\n    \"Month\": 5,\n    \"Year\": 2019,\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitPlan/ExportToPdf",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitPlan",
+										"ExportToPdf"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "New Plan",
+					"item": [
+						{
+							"name": "Calendar",
+							"item": [
+								{
+									"name": "LoadOnDemandPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{server}}/Api/VisitPlan/LoadOnDemandPartial",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"LoadOnDemandPartial"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Doctor",
+							"item": [
+								{
+									"name": "GridDoctorPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitDateTime\":\"2019-03-22\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 100,\n\t\"SearchColumn\":\"dr_monitoring,dr_code\",\n\t\"SearchValue\":\"bog,324\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/GridDoctorPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"GridDoctorPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GridDoctorCustomCallbackPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitDateTime\":\"2019-03-22\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 100\n}"
+										},
+										"url": {
+											"raw": "www.tanabe-sf.com/Api/VisitPlan/GridDoctorCustomCallbackPartialResult",
+											"host": [
+												"www",
+												"tanabe-sf",
+												"com"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"GridDoctorCustomCallbackPartialResult"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GridLookupPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"SearchColumn\":\"dr_name\",\n\t\"SearchValue\":\"rosalina\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/GridLookupPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"GridLookupPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "addvisit - DataViewPartialCustomCallback",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"addvisit\",\n\t\"VisitDateTime\" : \"2019-08-01\",\n\t\"Collections\" : [\n\t\t{\n\t\t\t\"Code\" : 308001\n\t\t}\n\t],\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 1000\n}"
+										},
+										"url": {
+											"raw": "{{server}}/Api/VisitPlan/DataViewPartialCustomCallback",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"DataViewPartialCustomCallback"
+											]
+										},
+										"description": "untuk action retrieve gunakan Prm = \"retrieve\" | selesai\nuntuk action export gunakan Prm = \"export\" | belum selesai\nuntuk action addvisit gunakan Prm = \"addvisit\" | belum selesai\nuntuk action requestverification gunakan Prm = \"request\" | selesai\n"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Product",
+							"item": [
+								{
+									"name": "DeleteProduct",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\": \"V19043865\",\n\t\"SpId\" : \"1038226\",\n\t\"Month\" : 4,\n\t\"Year\" : 2019,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/DeleteProduct",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"DeleteProduct"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "UpdateProduct",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\" : \"V19043876\",\n\t\"SpId\" : 1028203,\n\t\"Qty\" : 90,\n\t\"Sp\" : 0,\n\t\"Percentage\" : 0,\n\t\"Month\" : 4,\n\t\"Year\" : 2019,\n\t\"DrCode\" : 434039,\n\t\"VisitDatePlan\" : \"2019-04-01\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{server}}/Api/VisitPlan/UpdateProduct",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"UpdateProduct"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GridUserProductPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 100\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/GridUserProductPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"GridUserProductPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GridVisitProductCustomCallbackPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"retrieveVisitProduct\",\n\t\"VisitId\": \"V19043876\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/GridVisitProductCustomCallbackPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"GridVisitProductCustomCallbackPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GridVisitProductPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\": \"V19043871\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/GridVisitProductPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"GridVisitProductPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "retrieve - GridUserCustomCallbackProductPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitDateTime\":\"2019-04-11\",\n\t\"Prm\" : \"retrieve\",\n\t\"VisitId\" : \"V19043865\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 100\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/GridUserCustomCallbackProductPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"GridUserCustomCallbackProductPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "reset - GridUserCustomCallbackProductPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitDateTime\":\"2019-02-01\",\n\t\"Prm\" : \"reset\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 100\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/GridUserCustomCallbackProductPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"GridUserCustomCallbackProductPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AddProduct",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\" : \"V19043833\",\n\t\"month\" : 3,\n\t\"year\" : 2019,\n\t\"PrdCode\" : \"\",\n\t\"Qty\" : 100,\n\t\"Note\" : \"\",\n\t\"Sp\" : 1,\n\t\"Percentage\" : 10,\n\t\"VisitDatePlan\" : \"2019-03-22\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/AddProduct",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"AddProduct"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "copy - GridUserCustomCallbackProductPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\" : \"V19043865\",\n\t\"VisitDateTime\":\"2019-04-11\",\n\t\"Prm\" : \"copy\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 100\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/GridUserCustomCallbackProductPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"GridUserCustomCallbackProductPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "dropdown product - dsProductLookup",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 100\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/dsProductLookup",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"dsProductLookup"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Sales Promotion (SP)",
+							"item": [
+								{
+									"name": "DeleteSP",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"SpdsId\" : \"81661\",\n\t\"VisitId\" : \"V19043858\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/DeleteSP",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"DeleteSP"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "gridSPView",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\" : \"V19040921\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/gridSPView",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"gridSPView"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "gridSPViewCustomCallbackPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\" : \"V19043833\",\n\t\"Prm\" : \"retrievelistsp\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitPlan/gridSPViewCustomCallbackPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"gridSPViewCustomCallbackPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AddSP",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\" : \"V19043860\",\n\t\"EventName\" : \"UBI Q\",\n\t\"BAllocation\" : \"PMD\",\n\t\"BAmount\" : 20000,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 1000\n}"
+										},
+										"url": {
+											"raw": "{{server}}/Api/VisitPlan/AddSP",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"Api",
+												"VisitPlan",
+												"AddSP"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Visit Realization",
+			"item": [
+				{
+					"name": "Realization",
+					"item": [
+						{
+							"name": "Visit Index",
+							"item": [
+								{
+									"name": "DataViewPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\": \"X/pSYclyQ44=\",\n\t\"Month\": 9,\n\t\"Year\":2022,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"visit_date_plan\",\n\t\"SortOrder\" : \"ASC\",\n\t\"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+										},
+										"url": {
+											"raw": "{{server}}/Api/VisitRealization/DataViewPartial",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"DataViewPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CheckSignatureMessage",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\": \"rmcCFF3Z0OY=\",\n\t\"VisitId\": \"V191446817\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/CheckSignatureMessage",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"CheckSignatureMessage"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "retrieve - DataViewPartialCustomCallback",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Prm\": \"retrieve\",\n    \"Month\": 2,\n    \"Year\": 2019,\n    \"PageIndex\": 1,\n    \"PageSize\": 100,\n    \"SortExpression\": \"visit_date_plan\",\n    \"SortOrder\": \"ASC\",\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/DataViewPartialCustomCallback",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"DataViewPartialCustomCallback"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DeleteVisitAdditional",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\" : \"V19043857\",\n\t\"Month\":3,\n\t\"Year\":2019,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"dr_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/DeleteVisitAdditional",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"DeleteVisitAdditional"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ShiftRealization",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\": \"Rjf3UzWQQgU=\",\n\t\"VisitId\" : \"V19114355\",\n\t\"VisitDatePlan\" : \"2019-06-25\",\n\t\"PrevVisitDate\" : \"2019-06-26\",\n\t\"Month\":7,\n\t\"Year\":2019,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"visit_date_plan\",\n\t\"SortOrder\" : \"ASC\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/ShiftRealization",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"ShiftRealization"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cancellation - Grid Planned Visit - LoadDoctorPlaned",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"validate\",\n\t\"ConditionValue\" : \"half\",\n\t\"VisitDateTime\" : \"2019-04-14\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"visit_date_plan\",\n\t\"SortOrder\" : \"ASC\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/LoadCancellation",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"LoadCancellation"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Cancellation - Grid Planned Visit - LoadDoctorPlaned",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"submit\",\n\t\"ConditionValue\" : \"full\",\n\t\"ConditionText\" : \"Full Leave\",\n\t\"VisitDateTime\" : \"2019-04-01\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/LoadCancellation",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"LoadCancellation"
+													]
+												}
+											},
+											"_postman_previewlanguage": "Text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Full Submit Cancellation",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"submit\",\n\t\"ConditionValue\" : \"full\",\n\t\"ConditionText\" : \"Full Leave\",\n\t\"VisitDateTime\" : \"2019-04-12\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/LoadCancellation",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"LoadCancellation"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Half Submit Cancellation",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"submit\",\n\t\"ConditionValue\" : \"half\",\n\t\"ConditionText\" : \"Half Leave\",\n\t\"VisitDateTime\" : \"2019-04-14\",\n\t\"Collections\" : [\n\t\t{\n\t\t\t\"Code\" : \"V19043904\"\n\t\t},\n\t\t{\n\t\t\t\"Code\" : \"V19043905\"\n\t\t}\n\t],\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/LoadCancellation",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"LoadCancellation"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Summary Quadrant Doctor Realization",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Day\": \"0\",\n    \"Month\": \"5\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"visit_date_plan\",\n    \"SortOrder\": \"ASC\",\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+										},
+										"url": {
+											"raw": "{{server}}/Api/VisitRealization/SummaryDoctor",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"SummaryDoctor"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Export to Excel",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"retrieve\",\n\t\"Month\": 2,\n    \"Year\": 2019,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"visit_date_plan\",\n\t\"SortOrder\" : \"ASC\",\n\t\"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/ExportToExcel",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"ExportToExcel"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Export to Pdf",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Prm\": \"retrieve\",\n    \"Month\": 2,\n    \"Year\": 2019,\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"visit_date_plan\",\n    \"SortOrder\": \"ASC\",\n    \"SearchColumn\": \"\",\n    \"SearchValue\": \"\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/ExportToPdf",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"ExportToPdf"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Popup Realization",
+							"item": [
+								{
+									"name": "Visit Product Tab",
+									"item": [
+										{
+											"name": "GridVisitProductPartial",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\": \"Rjf3UzWQQgU=\",\n\t\"VisitId\": \"V19142047\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"vd_id\",\n\t\"SortOrder\" : \"ASC\"\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/GridVisitProductPartial",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"GridVisitProductPartial"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "cbProductVisitLookup",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\": \"rmcCFF3Z0OY=\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 1000\n}"
+												},
+												"url": {
+													"raw": "{{server}}/Api/VisitPlan/cbProductVisitLookup",
+													"host": [
+														"{{server}}"
+													],
+													"path": [
+														"Api",
+														"VisitPlan",
+														"cbProductVisitLookup"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "AddProductVisitRealization",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\" : \"V19043873\",\n\t\"VisitCode\" : \"U1\",\n\t\"Sp\" : 0,\n\t\"Percentage\" : 0,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 1000\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/AddProductVisitRealization",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"AddProductVisitRealization"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "retrieveVisitProductAdditional - GridVisitProductAdditionalCustomCallbackPartial",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"retrieveVisitProductAdditional\",\n\t\"VisitId\" : \"V19043911\",\n\t\"Month\":4,\n\t\"Year\":2019,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"visit_date_plan\",\n\t\"SortOrder\" : \"ASC\"\n}"
+												},
+												"url": {
+													"raw": "{{server}}/Api/VisitRealization/GridVisitProductAdditionalCustomCallbackPartial",
+													"host": [
+														"{{server}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"GridVisitProductAdditionalCustomCallbackPartial"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "DeleteProductVisitRealization",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VdId\" : 1679767,\n\t\"VisitId\" : \"V19043873\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"vd_id\",\n\t\"SortOrder\" : \"ASC\"\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/DeleteProductVisitRealization",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"DeleteProductVisitRealization"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Update Product",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\" : \"V19043873\",\n\t\"VisitCode\" : \"B2\",\n\t\"VdId\" : 1679767,\n\t\"Sp\" : 1,\n\t\"Percentage\" : 90,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/UpdateProductVisitRealization",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"UpdateProductVisitRealization"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Topic Title Tab",
+									"item": [
+										{
+											"name": "GridProductTopicPartial",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\": \"Rjf3UzWQQgU=\",\n\t\"VdId\": 1910984,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"vd_id\",\n\t\"SortOrder\" : \"ASC\"\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/GridProductTopicPartial",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"GridProductTopicPartial"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "GridProductTopicCustomCallbackPartial",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\": \"Rjf3UzWQQgU=\",\n\t\"Prm\" : \"retrievetopic\",\n\t\"VdId\": 1844280,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"vd_id\",\n\t\"SortOrder\" : \"ASC\"\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/GridProductTopicCustomCallbackPartial",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"GridProductTopicCustomCallbackPartial"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "updateFeedback",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"Auth\": \"Rjf3UzWQQgU=\",\n    \"Prm\": \"updateFeedback\",\n    \"VptId\": 264424,\n    \"VptFeedBack\": 4,\n    \"Info\": \"masih ada batuk dan cukup mengganggu\",\n    \"info_feedback_id\": 36,\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"vd_id\",\n    \"SortOrder\": \"ASC\"\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/GridProductTopicCustomCallbackPartial",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"GridProductTopicCustomCallbackPartial"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "cbProductTopicLookup",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VdId\" : \"1844618\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 1000\n}"
+												},
+												"url": {
+													"raw": "{{server}}/Api/VisitRealization/cbProductTopicLookup",
+													"host": [
+														"{{server}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"cbProductTopicLookup"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "AddProductTopic",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VdId\" : \"1679734\",\n\t\"TopicId\" : 7,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 1000\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/AddProductTopic",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"AddProductTopic"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "DeleteProductTopic",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"Rjf3UzWQQgU=\",\n\t\"VptId\": 264415,\n\t\"VdId\" : 1844280,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/DeleteProductTopic",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"DeleteProductTopic"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Load Topic Preview - FolderBindingPartial",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VptId\" : \"13222\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/FolderBindingPartial",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"FolderBindingPartial"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Add show topic duration ***",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VdId\" : \"1135805\",\n\t\"TopicId\" : 16,\n    \"VptFeedBack\": 3,\n    \"Duration\" : 5\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/AddShowTopicDuration",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"AddShowTopicDuration"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Get Feedback",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"VptId\" : \"264424\",\n    \"Prm\" : \"bindFeedback\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/GridProductTopicCustomCallbackPartial",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"GridProductTopicCustomCallbackPartial"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Feedback Info",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"TopicId\" : \"1\",\n\t\"VptId\" : \"264424\",\n\t\"VptFeedBack\": 2,\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+												},
+												"url": {
+													"raw": "{{server}}/Api/VisitRealization/GetTopicInfo",
+													"host": [
+														"{{server}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"GetTopicInfo"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "ShareTopicFile",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"DrName\" : \"ADI WIJAYA\",\n\t\"VisitProduct\": \"TANAPRESS\",\n\t\"TopicId\" : \"2\",\n\t\"VisitTopic\" : \"karena Tanapress meningkatkan substance P sehingga dapat meningkatkan reflex menelan pada pasien\",\n\t\"Email\" : \"abdurahman.hakim@vodjo.com\"\n}"
+												},
+												"url": {
+													"raw": "{{server}}/Api/VisitRealization/ShareTopicFile",
+													"host": [
+														"{{server}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"ShareTopicFile"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Tanda tangan",
+									"item": [
+										{
+											"name": "GetDeviation",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\": \"V20041859\",\n\t\"DrCode\" : \"344110\"\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/GetDeviation",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"GetDeviation"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "GetSignature",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"Rjf3UzWQQgU=\",\n\t\"VisitId\": \"V19114278\",\n\t\"DrCode\" : \"821022\"\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/GetSignature",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"GetSignature"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "AddDeviation",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\": \"V19116974\",\n\t\"DrCode\" : \"324046\",\n\t\"Latitude\" : \"-6.906522628857667\",\n\t\"Longitude\" : \"107.81884361999838\",\n\t\"Reason\" : \"Dokter belum sepakat\",\n    \"Address\" : \"Marga Jaya, Kec. Tanjungsari, Kabupaten Sumedang, Jawa Barat 45362\"\n}"
+												},
+												"url": {
+													"raw": "{{server}}/Api/VisitRealization/AddDeviation",
+													"host": [
+														"{{server}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"AddDeviation"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "AddSignature",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "UploadedImage",
+															"type": "file",
+															"src": "/C:/Users/admin/Desktop/testtandatangan.jpg"
+														},
+														{
+															"key": "Auth",
+															"value": "rmcCFF3Z0OY=",
+															"type": "text"
+														},
+														{
+															"key": "VisitId",
+															"value": "V19043829",
+															"type": "text"
+														},
+														{
+															"key": "DrCode",
+															"value": "308003",
+															"type": "text"
+														},
+														{
+															"key": "Latitude",
+															"value": "aa",
+															"type": "text"
+														},
+														{
+															"key": "Longitude",
+															"value": "aa",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/AddSignature",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"AddSignature"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Tab Attachment",
+									"item": [
+										{
+											"name": "Upload Attachment",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "FileUpload",
+															"type": "file",
+															"src": "/C:/Users/Dell/Pictures/vadim-bogulov-ZHFIR2oAPnM-unsplash.jpg"
+														},
+														{
+															"key": "Auth",
+															"value": "rmcCFF3Z0OY=",
+															"type": "text"
+														},
+														{
+															"key": "VisitId",
+															"value": "V20044866",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/UploadAttachment",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"UploadAttachment"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Load Attachment",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"Auth\": \"aUuOGYiFhwc=\",\n    \"VisitId\": \"V19025729\",\n    \"Prm\" : \"retrieveattachment\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/gridAttachmentRealizationViewCustomCallbackPartial",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"gridAttachmentRealizationViewCustomCallbackPartial"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Delete Attachment",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpfId\": 0\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/DeleteAttachment",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"DeleteAttachment"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Tab SP",
+									"item": [
+										{
+											"name": "List Event",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Budget\" : \"OWN\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/EventNamePartialView",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"EventNamePartialView"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "LoadRealization",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"Auth\": \"Rjf3UzWQQgU=\",\n    \"VisitId\": \"V19114315\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/LoadRealization",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"LoadRealization"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Submit Realization",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"realization\",\n\t\"Visited\" : \"1\",\n\t\"VisitId\" : \"V20044866\",\n    \"visit_type\" : 0,\n\t\"Info\" : \"\",\n\t\"RealAmount\":\"100000\",\n\t\"SpBa\" : \"OWN\",\n\t\"EName\" : \"\",\n\t\"EPlace\": \"\",\n\t\"DrCode\" : \"434036\",\n\t\"IsRealized\" : \"1\",\n\t\"VisitDateTime\" : \"2022-02-04\",\n\t\"Latitude\" : \"1231241235351351 LS\",\n\t\"Longitude\" : \"12423523513513532 LB\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"dr_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+												},
+												"url": {
+													"raw": "{{local}}/Api/VisitRealization/DataViewPartialCustomCallback",
+													"host": [
+														"{{local}}"
+													],
+													"path": [
+														"Api",
+														"VisitRealization",
+														"DataViewPartialCustomCallback"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "2. Submit Realization untuk dokter yang sp nya belum di plan kan, dan tidak menambahkan SP saat di realization",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"name": "Content-Type",
+																"type": "text",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"realization\",\n\t\"Visited\" : \"1\",\n\t\"VisitId\" : \"V19043876\",\n\t\"Info\" : \"\",\n\t\"SPRealizationStat\" : \"-1\",\n\t\"RealAmount\":\"0\",\n\t\"SpBa\" : \"undefined\",\n\t\"EName\" : \"\",\n\t\"EPlace\":\"\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"dr_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+														},
+														"url": {
+															"raw": "{{local}}/Api/VisitRealization/DataViewPartialCustomCallback",
+															"host": [
+																"{{local}}"
+															],
+															"path": [
+																"Api",
+																"VisitRealization",
+																"DataViewPartialCustomCallback"
+															]
+														}
+													},
+													"_postman_previewlanguage": "Text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "5. Submit Realization dengan PMD budget",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"name": "Content-Type",
+																"type": "text",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"realization\",\n\t\"Visited\" : \"1\",\n\t\"VisitId\" : \"V19043876\",\n\t\"Info\" : \"\",\n\t\"SPRealizationStat\" : \"2\",\n\t\"RealAmount\":\"600000\",\n\t\"SpBa\" : \"PMD\",\n\t\"EName\" : \"UBI Q\",\n\t\"EPlace\": \"bdg\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"dr_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+														},
+														"url": {
+															"raw": "{{local}}/Api/VisitRealization/DataViewPartialCustomCallback",
+															"host": [
+																"{{local}}"
+															],
+															"path": [
+																"Api",
+																"VisitRealization",
+																"DataViewPartialCustomCallback"
+															]
+														}
+													},
+													"_postman_previewlanguage": "Text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "1 Submit realization untuk dokter yang sp ny sudah di plan kan, dan direalisasikan",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"name": "Content-Type",
+																"type": "text",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"realization\",\n\t\"Visited\" : \"1\",\n\t\"VisitId\" : \"V19043869\",\n\t\"Info\" : \"\",\n\t\"SPRealizationStat\" : \"1\",\n\t\"RealAmount\":\"500000\",\n\t\"SpBa\" : \"OWN\",\n\t\"EName\" : \"Regular\",\n\t\"EPlace\":\"jkt\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"dr_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+														},
+														"url": {
+															"raw": "{{local}}/Api/VisitRealization/DataViewPartialCustomCallback",
+															"host": [
+																"{{local}}"
+															],
+															"path": [
+																"Api",
+																"VisitRealization",
+																"DataViewPartialCustomCallback"
+															]
+														}
+													},
+													"_postman_previewlanguage": "Text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "3. Submit Realization untuk dokter yang sp ny belum di plankan dan menambahkan sp saat di realization",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"name": "Content-Type",
+																"type": "text",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"realization\",\n\t\"Visited\" : \"1\",\n\t\"VisitId\" : \"V19043866\",\n\t\"Info\" : \"\",\n\t\"SPRealizationStat\" : \"2\",\n\t\"RealAmount\":\"600000\",\n\t\"SpBa\" : \"OWN\",\n\t\"EName\" : \"Regular\",\n\t\"EPlace\": \"bdg\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"dr_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+														},
+														"url": {
+															"raw": "{{local}}/Api/VisitRealization/DataViewPartialCustomCallback",
+															"host": [
+																"{{local}}"
+															],
+															"path": [
+																"Api",
+																"VisitRealization",
+																"DataViewPartialCustomCallback"
+															]
+														}
+													},
+													"_postman_previewlanguage": "Text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "4. Submit Realization not visited",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"name": "Content-Type",
+																"type": "text",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"realization\",\n\t\"Visited\" : \"0\",\n\t\"VisitId\" : \"V19043872\",\n\t\"Info\" : \"\",\n\t\"SPRealizationStat\" : \"-1\",\n\t\"RealAmount\": \"0\",\n\t\"SpBa\" : \"undefined\",\n\t\"EName\" : \"\",\n\t\"EPlace\":\"\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"dr_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+														},
+														"url": {
+															"raw": "{{local}}/Api/VisitRealization/DataViewPartialCustomCallback",
+															"host": [
+																"{{local}}"
+															],
+															"path": [
+																"Api",
+																"VisitRealization",
+																"DataViewPartialCustomCallback"
+															]
+														}
+													},
+													"_postman_previewlanguage": "Text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Additional",
+					"item": [
+						{
+							"name": "Doctor",
+							"item": [
+								{
+									"name": "Add Doctor",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"addvisitadditional\",\n\t\"DrCode\" : \"432134\",\n\t\"VisitDatePlan\" : \"2020-02-14\",\n\t\"Info\" : \"\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/GridDoctorAdditionalCustomCallbackPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"GridDoctorAdditionalCustomCallbackPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GridDoctorAdditionalPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"dr_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/GridDoctorAdditionalPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"GridDoctorAdditionalPartial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "LoadDoctorList",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 100\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/LoadDoctorList",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"LoadDoctorList"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Tab SP",
+							"item": [
+								{
+									"name": "submit_additional - GridDoctorAdditionalCustomCallbackPartial",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Prm\" : \"submit_additional\",\n\t\"VisitId\" : \"V19043910\",\n\t\"Info\" : \"\",\n\t\"SpBa\" : \"\",\n\t\"RealAmount\":\"\",\n\t\"EName\" : \"\",\n\t\"EPlace\":\"\",\n\t\"DrCode\" : \"333123\",\n\t\"Latitude\" : \"\",\n\t\"Longitude\" : \"\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"dr_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitRealization/GridDoctorAdditionalCustomCallbackPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitRealization",
+												"GridDoctorAdditionalCustomCallbackPartial"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Visit Realization Offline",
+			"item": [
+				{
+					"name": "Backup Data All",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Auth\": \"Rjf3UzWQQgU=\",\n\t\"Month\":7,\n\t\"Year\":2019\n}"
+						},
+						"url": {
+							"raw": "{{local}}/Api/VisitRealization/GetAllDataOffline",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"Api",
+								"VisitRealization",
+								"GetAllDataOffline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllDataMaster",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Auth\": \"Rjf3UzWQQgU=\",\n\t\"Month\":6,\n\t\"Year\":2019\n}"
+						},
+						"url": {
+							"raw": "{{server}}/Api/VisitRealization/GetAllDataMaster",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"Api",
+								"VisitRealization",
+								"GetAllDataMaster"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllDataTrans",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Auth\": \"rmcCFF3Z0OY=\",\n\t\"Month\":7,\n\t\"Year\":2019\n}"
+						},
+						"url": {
+							"raw": "{{local}}/Api/VisitRealization/GetAllDataTrans",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"Api",
+								"VisitRealization",
+								"GetAllDataTrans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SyncTrans",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Auth\": \"Rjf3UzWQQgU=\",\n  \"ListObject\":[\n\t  \t{\n\t  \t\t\"ListProduct\": [{ \n\t\t\t\t\t\t        \"vd_id\":\"1844618\", \n\t\t\t\t\t\t        \"m_vd_id\":\"1844618\", \n\t\t\t\t\t\t        \"visit_id\" : \"V19114289\", \n\t\t\t\t\t\t        \"visit_code\" : \"B2\" ,\n\t\t\t\t\t\t        \"vd_value\" : 1 ,\n\t\t\t\t\t\t        \"vd_date_saved\" : \"2019-06-12\" ,\n\t\t\t\t\t\t        \"sp_sp\" : \"\" ,\n\t\t\t\t\t\t        \"sp_percentage\" : \"\",\n\t\t\t\t\t\t        \"is_inserted\":0,\n\t\t\t\t\t\t        \"is_updated\":0\n\t\t\t\t\t\t      }],\n\t  \t\t\"ListTopic\" : [\n\t  \t\t\t{\n\t\t\t\t\t\t\"vpt_id\": \"1\",\n\t\t\t\t\t\t\"m_vpt_id\"  : \"1\",\n\t\t\t\t\t\t\"vd_id\"  : \"1\",\n\t\t\t\t\t\t\"m_vd_id\" :  \"1\",\n\t\t\t\t\t\t\"topic_id\" : 39,\n\t\t\t\t\t\t\"vpt_feedback\" : \"\",\n\t\t\t\t\t\t\"vpt_feedback_date\" : \"\",\n\t\t\t\t\t\t\"note_feedback\" : \"\",\n\t\t\t\t\t\t\"info_feedback_id\" : \"\",\n\t\t\t\t        \"is_inserted\":0,\n\t\t\t\t        \"is_updated\":0\n\t\t\t\t    }, \n\t\t\t\t    {\n\t\t\t\t\t\t\"vpt_id\": \"\",\n\t\t\t\t\t\t\"m_vpt_id\"  : \"2\",\n\t\t\t\t\t\t\"vd_id\"  : \"\",\n\t\t\t\t\t\t\"m_vd_id\" :  \"2\",\n\t\t\t\t\t\t\"topic_id\" : 40,\n\t\t\t\t\t\t\"vpt_feedback\" : \"\",\n\t\t\t\t\t\t\"vpt_feedback_date\" : \"\",\n\t\t\t\t\t\t\"note_feedback\" : \"\",\n\t\t\t\t\t\t\"info_feedback_id\" : \"\",\n\t\t\t\t        \"is_inserted\":1,\n\t\t\t\t        \"is_updated\":0\n\t\t\t\t    }, \n\t\t\t\t    {\n\t\t\t\t\t\t\"vpt_id\": \"\",\n\t\t\t\t\t\t\"m_vpt_id\"  : \"3\",\n\t\t\t\t\t\t\"vd_id\"  : \"\",\n\t\t\t\t\t\t\"m_vd_id\" :  \"3\",\n\t\t\t\t\t\t\"topic_id\" : 41,\n\t\t\t\t\t\t\"vpt_feedback\" : \"\",\n\t\t\t\t\t\t\"vpt_feedback_date\" : \"\",\n\t\t\t\t\t\t\"note_feedback\" : \"\",\n\t\t\t\t\t\t\"info_feedback_id\" : \"\",\n\t\t\t\t        \"is_inserted\":1,\n\t\t\t\t        \"is_updated\":1\n\t\t\t\t    }],\n\t\t    \"ListSign\": [{ \n\t\t\t\t        \"signature_id\":\"1\", \n\t\t\t\t        \"m_signature_id\":\"1\", \n\t\t\t\t        \"visit_id\" : \"V19100874\", \n\t\t\t\t        \"rep_id\" : \"11.03\" ,\n\t\t\t\t        \"dr_code\" : 611083 ,\n\t\t\t\t        \"sign\" : \"1\" ,\n\t\t\t\t        \"file_upload\" : \"~/Asset/Images/Sign/V19100874_611083_20190522_143144_803.jpg\" ,\n\t\t\t\t        \"reason\" : \"-\",\n\t\t\t\t        \"created_at\": \"2019-07-25\",\n\t\t\t\t        \"updated_at\": \"2019-07-25\"\n\t\t\t\t      }]\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{local}}/Api/VisitRealization/SyncProduct",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"Api",
+								"VisitRealization",
+								"SyncProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SyncTrans Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Auth\": \"Rjf3UzWQQgU=\",\n  \"ListObject\":[\n\t  \t{\n\t  \t\t\"ListProduct\": [{ \n\t\t\t\t\t\t        \"vd_id\":\"\", \n\t\t\t\t\t\t        \"m_vd_id\":\"1877354\", \n\t\t\t\t\t\t        \"visit_id\" : \"V19114277\", \n\t\t\t\t\t\t        \"visit_code\" : \"N1\" ,\n\t\t\t\t\t\t        \"vd_value\" : 1 ,\n\t\t\t\t\t\t        \"vd_date_saved\" : \"2019-07-27\" ,\n\t\t\t\t\t\t        \"sp_sp\" : \"\" ,\n\t\t\t\t\t\t        \"sp_percentage\" : \"67\",\n\t\t\t\t\t\t        \"is_inserted\":1,\n\t\t\t\t\t\t        \"is_updated\":0\n\t\t\t\t\t\t      }],\n\t  \t\t\"ListTopic\" : [],\n\t\t    \"ListSign\": []\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{local}}/Api/VisitRealization/SyncProduct",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"Api",
+								"VisitRealization",
+								"SyncProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SyncTrans Copy Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ListObject\": [\r\n        {\r\n            \"ListProduct\": [\r\n                {\r\n                    \"is_inserted\" : \"0\",\r\n                    \"is_updated\" : \"1\",\r\n                    \"m_vd_id\" : \"1877401\",\r\n                    \"sp_percentage\" : \"0\",\r\n                    \"sp_sp\" :\"0\",\r\n                    \"vd_date_saved\" : \"2019-07-28T17:23:26.763\",\r\n                    \"vd_id\" : \"1877401\",\r\n                    \"vd_value\" : \"1\",\r\n                    \"visit_code\" : \"B2\",\r\n                    \"visit_id\" : \"V19114277\"\r\n                },\r\n                {\r\n                    \"is_inserted\" : \"0\",\r\n                    \"is_updated\" : \"0\",\r\n                    \"m_vd_id\" : \"1877403\",\r\n                    \"sp_percentage\" : \"40\",\r\n                    \"sp_sp\" : \"0\",\r\n                    \"vd_date_saved\" : \"2019-07-28T17:23:53.497\",\r\n                    \"vd_id\" : \"1877403\",\r\n                    \"vd_value\" : \"1\",\r\n                    \"visit_code\" : \"N1\",\r\n                    \"visit_id\" : \"V19114277\"\r\n                }\r\n                \r\n            ],\r\n            \"ListTopic\": [\r\n            \r\n                        {\r\n                        \"info_feedback_id\" : \"\",\r\n                        \"is_inserted\" : 1,\r\n                        \"is_updated\" : 0,\r\n                        \"m_vd_id\" : 1877401,\r\n                        \"m_vpt_id\" : 264425,\r\n                        \"note_feedback\" : \"\",\r\n                        \"topic_id\" : 39,\r\n                        \"vd_id\" : \"\",\r\n                        \"vpt_feedback\" : \"\",\r\n                        \"vpt_feedback_date\" : \"\",\r\n                        \"vpt_id\" : \"\"\r\n                        },\r\n                        {\r\n                        \"info_feedback_id\" : \"\",\r\n                        \"is_inserted\" : 1,\r\n                        \"is_updated\" : 0,\r\n                        \"m_vd_id\" : 1877401,\r\n                        \"m_vpt_id\" : 264426,\r\n                        \"note_feedback\" : \"\",\r\n                        \"topic_id\" : 41,\r\n                        \"vd_id\" : \"\",\r\n                        \"vpt_feedback\" : \"\",\r\n                        \"vpt_feedback_date\" : \"\",\r\n                        \"vpt_id\" : \"\"\r\n                        }\r\n            \r\n            ],\r\n            \"ListSign\": [\r\n                {\r\n                    \"created_at\" : \"2019-07-26T00:00:00\",\r\n                    \"dr_code\" : \"821018\",\r\n                    \"file_upload\" : \"droplet4.vodjo.com/Asset/Images/Sign/V19114277_821018_20190728_163118_906.jpg\",\r\n                    \"m_signature_id\" : \"3952\",\r\n                    \"reason\" : \"-\",\r\n                    \"rep_id\" : \"11.03\",\r\n                    \"sign\" : \"\",\r\n                    \"signature_id\" : \"0\",\r\n                    \"updated_at\" : \"2019-07-28T00:00:00\",\r\n                    \"visit_id\" : \"V19114277\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"Auth\": \"Rjf3UzWQQgU=\"\r\n}"
+						},
+						"url": {
+							"raw": "{{local}}/Api/VisitRealization/SyncProduct",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"Api",
+								"VisitRealization",
+								"SyncProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SyncTrans Copy Copy Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Auth\": \"Rjf3UzWQQgU=\",\n    \"ListObject\": [\n        {\n            \"ListProduct\": [\n                {\n                    \"sp_sp\": \"0\",\n                    \"is_updated\": \"0\",\n                    \"is_inserted\": \"0\",\n                    \"m_vd_id\": \"1877401\",\n                    \"visit_code\": \"B2\",\n                    \"vd_value\": \"1\",\n                    \"vd_date_saved\": \"2019-07-28T17:23:26.763\",\n                    \"sp_percentage\": \"0\",\n                    \"vd_id\": \"1877401\",\n                    \"visit_id\": \"V19114277\"\n                },\n                {\n                    \"sp_sp\": \"0\",\n                    \"is_updated\": \"0\",\n                    \"is_inserted\": \"0\",\n                    \"m_vd_id\": \"1877403\",\n                    \"visit_code\": \"N1\",\n                    \"vd_value\": \"1\",\n                    \"vd_date_saved\": \"2019-07-28T17:23:53.497\",\n                    \"sp_percentage\": \"40\",\n                    \"vd_id\": \"1877403\",\n                    \"visit_id\": \"V19114277\"\n                },\n                {\n                    \"sp_sp\": \"0\",\n                    \"is_updated\": \"0\",\n                    \"is_inserted\": \"1\",\n                    \"m_vd_id\": \"1877404\",\n                    \"visit_code\": \"B1\",\n                    \"vd_value\": \"1\",\n                    \"vd_date_saved\": \"2019-07-28T21:25:45+07:00\",\n                    \"sp_percentage\": \"0\",\n                    \"vd_id\": \"\",\n                    \"visit_id\": \"V19114277\"\n                },\n                {\n                    \"sp_sp\": \"0\",\n                    \"is_updated\": \"0\",\n                    \"is_inserted\": \"1\",\n                    \"m_vd_id\": \"1877405\",\n                    \"visit_code\": \"T1\",\n                    \"vd_value\": \"1\",\n                    \"vd_date_saved\": \"2019-07-28T21:29:04+07:00\",\n                    \"sp_percentage\": \"0\",\n                    \"vd_id\": \"\",\n                    \"visit_id\": \"V19114277\"\n                }\n            ],\n            \"ListTopic\": [\n                {\n                    \"vpt_id\": \"\",\n                    \"m_vpt_id\": \"264425\",\n                    \"topic_id\": \"39\",\n                    \"vpt_feedback\": \"\",\n                    \"note_feedback\": \"\",\n                    \"m_vd_id\": \"1877401\",\n                    \"info_feedback_id\": \"\",\n                    \"is_inserted\": \"1\",\n                    \"is_updated\": \"0\",\n                    \"vpt_feedback_date\": \"\",\n                    \"vd_id\": \"\"\n                },\n                {\n                    \"vpt_id\": \"\",\n                    \"m_vpt_id\": \"264426\",\n                    \"topic_id\": \"41\",\n                    \"vpt_feedback\": \"\",\n                    \"note_feedback\": \"\",\n                    \"m_vd_id\": \"1877401\",\n                    \"info_feedback_id\": \"\",\n                    \"is_inserted\": \"1\",\n                    \"is_updated\": \"0\",\n                    \"vpt_feedback_date\": \"\",\n                    \"vd_id\": \"\"\n                },\n                {\n                    \"vpt_id\": \"\",\n                    \"m_vpt_id\": \"264427\",\n                    \"topic_id\": \"1\",\n                    \"vpt_feedback\": \"4\",\n                    \"note_feedback\": \"\",\n                    \"m_vd_id\": \"1877405\",\n                    \"info_feedback_id\": \"\",\n                    \"is_inserted\": \"1\",\n                    \"is_updated\": \"0\",\n                    \"vpt_feedback_date\": \"2019-07-28T21:29:47+07:00\",\n                    \"vd_id\": \"\"\n                },\n                {\n                    \"vpt_id\": \"\",\n                    \"m_vpt_id\": \"264428\",\n                    \"topic_id\": \"2\",\n                    \"vpt_feedback\": \"4\",\n                    \"note_feedback\": \"\",\n                    \"m_vd_id\": \"1877405\",\n                    \"info_feedback_id\": \"\",\n                    \"is_inserted\": \"1\",\n                    \"is_updated\": \"0\",\n                    \"vpt_feedback_date\": \"2019-07-28T21:30:06+07:00\",\n                    \"vd_id\": \"\"\n                }\n            ],\n            \"ListSign\": [\n                {\n                    \"rep_id\": \"11.03\",\n                    \"m_signature_id\": \"3979\",\n                    \"dr_code\": \"821018\",\n                    \"file_upload\": \"V19114277_821018_20190728_203114_645.jpg\",\n                    \"reason\": \"-\",\n                    \"created_at\": \"2019-07-26T00:00:00\",\n                    \"signature_id\": \"\",\n                    \"updated_at\": \"2019-07-28T00:00:00\",\n                    \"sign\": \"\",\n                    \"visit_id\": \"V19114277\"\n                }\n            ]\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{local}}/Api/VisitRealization/SyncProduct",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"Api",
+								"VisitRealization",
+								"SyncProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SyncTrans Copy Copy Copy Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ListObject\": [\n        {\n            \"ListProduct\": [\n                {\n                    \"sp_sp\": \"0\",\n                    \"is_updated\": \"0\",\n                    \"is_inserted\": \"0\",\n                    \"m_vd_id\": \"1911141\",\n                    \"visit_code\": \"T9\",\n                    \"vd_value\": \"1\",\n                    \"vd_date_saved\": \"2019-07-04T14:04:52\",\n                    \"sp_percentage\": \"0\",\n                    \"vd_id\": \"1911141\",\n                    \"visit_id\": \"V19142041\"\n                },\n                {\n                    \"sp_sp\": \"0\",\n                    \"is_updated\": \"0\",\n                    \"is_inserted\": \"0\",\n                    \"m_vd_id\": \"1911142\",\n                    \"visit_code\": \"U1\",\n                    \"vd_value\": \"1\",\n                    \"vd_date_saved\": \"2019-07-04T14:04:52\",\n                    \"sp_percentage\": \"0\",\n                    \"vd_id\": \"1911142\",\n                    \"visit_id\": \"V19142041\"\n                },\n                {\n                    \"sp_sp\": \"0\",\n                    \"is_updated\": \"0\",\n                    \"is_inserted\": \"1\",\n                    \"m_vd_id\": \"1938111\",\n                    \"visit_code\": \"B2\",\n                    \"vd_value\": \"1\",\n                    \"vd_date_saved\": \"2019-07-31T12:25:01+07:00\",\n                    \"sp_percentage\": \"0\",\n                    \"vd_id\": \"\",\n                    \"visit_id\": \"V19142041\"\n                }\n            ],\n            \"ListTopic\": [],\n            \"ListSign\": [\n                {\n                    \"rep_id\": \"12.36\",\n                    \"m_signature_id\": \"13808\",\n                    \"dr_code\": \"308007\",\n                    \"file_upload\": \"V19142041_308007_20190730_213222_296.jpg\",\n                    \"reason\": \"-\",\n                    \"created_at\": \"2019-07-30T00:00:00\",\n                    \"signature_id\": \"\",\n                    \"updated_at\": \"2019-07-31T00:00:00\",\n                    \"sign\": \"\",\n                    \"visit_id\": \"V19142041\"\n                }\n            ]\n        }\n    ],\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+						},
+						"url": {
+							"raw": "{{local}}/Api/VisitRealization/SyncProduct",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"Api",
+								"VisitRealization",
+								"SyncProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllDataImages",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Auth\": \"rmcCFF3Z0OY=\",\n\t\"Month\":7,\n\t\"Year\":2019\n}"
+						},
+						"url": {
+							"raw": "{{server}}/Api/VisitRealization/GetAllDataImages",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"Api",
+								"VisitRealization",
+								"GetAllDataImages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Visit Actual",
+			"item": [
+				{
+					"name": "Index",
+					"item": [
+						{
+							"name": "DataViewPartial",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Day\": \"0\",\n    \"Month\": \"6\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"visit_date_plan\",\n    \"SortOrder\": \"ASC\",\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitActual/DataViewPartial",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitActual",
+										"DataViewPartial"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Detail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"VisitId\": \"V19040959\"\n}"
+								},
+								"url": {
+									"raw": "{{server}}/Api/VisitActual/GetDetailActual",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Api",
+										"VisitActual",
+										"GetDetailActual"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request Verification",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Day\": \"0\",\n    \"Month\": \"4\",\n    \"Year\": \"2019\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitActual/RequestVerificationActual",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitActual",
+										"RequestVerificationActual"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Summary Quadrant Doctor Actual",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Day\": \"0\",\n    \"Month\": \"1\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"visit_date_plan\",\n    \"SortOrder\": \"ASC\",\n    \"SearchColumn\": \"dr_name\",\n\t\"SearchValue\": \"FENTY\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitActual/SummaryDoctor",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitActual",
+										"SummaryDoctor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Pdf",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Day\": \"0\",\n    \"Month\": \"1\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"visit_date_plan\",\n    \"SortOrder\": \"ASC\",\n    \"SearchColumn\": \"dr_code\",\n    \"SearchValue\": \"324044\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitActual/ExportToPdf",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitActual",
+										"ExportToPdf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Excel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Day\": \"0\",\n    \"Month\": \"1\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"visit_date_plan\",\n    \"SortOrder\": \"ASC\",\n    \"SearchColumn\": \"dr_code\",\n    \"SearchValue\": \"324044\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitActual/ExportToExcel",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitActual",
+										"ExportToExcel"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Popup Edit",
+					"item": [
+						{
+							"name": "Product",
+							"item": [
+								{
+									"name": "LoadProduct",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitActual/LoadProduct",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitActual",
+												"LoadProduct"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Product",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"VdId\" : 0\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitActual/DeleteProductDetail",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitActual",
+												"DeleteProductDetail"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add Product",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"VisitId\": \"V19043882\",\n    \"VisitCollections\": [\n        {\n            \"Code\": \"U1\"\n        },\n        {\n            \"Code\": \"T1B\"\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/VisitActual/AddProductDetail",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"VisitActual",
+												"AddProductDetail"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Save Edit Actual",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"VisitPlan\": 1,\n    \"DrCode\" : 434073,\n    \"VisitReal\": 0,\n    \"Info\": \"\",\n    \"VIsitSp\": 0,\n    \"RealAmount\":0,\n    \"VisitId\": \"V19040959\"\n}"
+								},
+								"url": {
+									"raw": "{{server}}/Api/VisitActual/SaveEditActual",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Api",
+										"VisitActual",
+										"SaveEditActual"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Visit History",
+			"item": [
+				{
+					"name": "Index",
+					"item": [
+						{
+							"name": "DataViewPartial",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"1\",\n    \"Year\": \"2020\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{server}}/Api/VisitHistory/DataViewPartial",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Api",
+										"VisitHistory",
+										"DataViewPartial"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DataViewPartial Search Text",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"6\",\n    \"Year\": \"2019\",\n    \"SearchText\":\"reg\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitHistory/DataViewPartialSearch",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitHistory",
+										"DataViewPartialSearch"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Detail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"VisitId\": \"V19022614\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitHistory/GetDetailHistory",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitHistory",
+										"GetDetailHistory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Excel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": 4,\n    \"Year\": 2019\n}"
+								},
+								"url": {
+									"raw": "{{server}}/Api/VisitHistory/ExportToExcel",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Api",
+										"VisitHistory",
+										"ExportToExcel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Pdf",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": 4,\n    \"Year\": 2019\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitHistory/ExportToPdf",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitHistory",
+										"ExportToPdf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Summary Quadrant Doctor History",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Month\" : 4,\n\t\"Year\" : 2019\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VisitHistory/SummaryDoctor",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VisitHistory",
+										"SummaryDoctor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show All Topic",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"VisitId\": \"V19097584\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"vd_id\",\n\t\"SortOrder\" : \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/VIsitHistory/ShowAllTopic",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"VIsitHistory",
+										"ShowAllTopic"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User Realization",
+			"item": [
+				{
+					"name": "Index",
+					"item": [
+						{
+							"name": "View Grid",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Month\": \"1\",\n\t\"Year\": \"2019\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"dr_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserRealization/ViewUserRealization",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserRealization",
+										"ViewUserRealization"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Detail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"SpId\": \"998158\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"spa_date\",\n\t\"SortOrder\" : \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserRealization/DetailUserRealization",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserRealization",
+										"DetailUserRealization"
+									]
+								},
+								"description": "dipakai di saat realization/edit tab product, dan show detail"
+							},
+							"response": []
+						},
+						{
+							"name": "Export to Pdf",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"2\",\n    \"Year\": \"2019\",\n    \"dr_code\": \"\",\n    \"sales_realization\": \"\",\n    \"dr_spec\": \"\",\n    \"dr_quadrant\": \"\",\n    \"dr_monitoring\": \"\",\n    \"prd_name\": \"\",\n    \"prd_price\": \"\",\n    \"sp_target_qty\": \"\",\n    \"sp_target_value\": \"\",\n    \"sp_sales_qty\": \"\",\n    \"sp_sales_value\": \"\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"dr_name\",\n    \"SortOrder\": \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserRealization/ExportToPdf",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserRealization",
+										"ExportToPdf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export to Excel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"1\",\n    \"Year\": \"2019\",\n    \"dr_code\": \"\",\n    \"sales_realization\": \"\",\n    \"dr_spec\": \"\",\n    \"dr_quadrant\": \"\",\n    \"dr_monitoring\": \"\",\n    \"prd_name\": \"\",\n    \"prd_price\": \"\",\n    \"sp_target_qty\": \"\",\n    \"sp_target_value\": \"\",\n    \"sp_sales_qty\": \"\",\n    \"sp_sales_value\": \"\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"dr_name\",\n    \"SortOrder\": \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{server}}/Api/UserRealization/ExportToExcel",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Api",
+										"UserRealization",
+										"ExportToExcel"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Popup Realization",
+					"item": [
+						{
+							"name": "Add Product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpId\": 998158,\n    \"SpaDate\": \"2019-05-05\",\n    \"SpaQuantity\": 1,\n    \"SpaNote\": \"Disanggupi oleh dokter\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"spa_date\",\n    \"SortOrder\": \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserRealization/AddProduct",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserRealization",
+										"AddProduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpaId\": 288983,\n    \"SpId\": 998158,\n    \"SpaDate\": \"2019-04-26\",\n    \"SpaQuantity\": 1,\n    \"SpaNote\": \"tidak semua disanggupi oleh dokter\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"spa_date\",\n    \"SortOrder\": \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserRealization/UpdateProduct",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserRealization",
+										"UpdateProduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpaId\": 288998,\n    \"SpId\": 998158,\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"spa_date\",\n    \"SortOrder\": \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserRealization/DeleteProduct",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserRealization",
+										"DeleteProduct"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User Actual",
+			"item": [
+				{
+					"name": "Index",
+					"item": [
+						{
+							"name": "ViewUserActual",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"Month\": \"1\",\n\t\"Year\": \"2019\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"prd_name\",\n\t\"SortOrder\" : \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserActual/ViewUserActual",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserActual",
+										"ViewUserActual"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View User Actual Search text",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"1\",\n    \"Year\": \"2019\",\n    \"TextSearch\": \"her\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserActual/DetailUserActual",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserActual",
+										"DetailUserActual"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Pdf",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"1\",\n    \"Year\": \"2019\",\n    \"SortExpression\": \"prd_name\",\n    \"SortOrder\": \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserActual/ExportToPdf",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserActual",
+										"ExportToPdf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Excel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"1\",\n    \"Year\": \"2019\",\n    \"SortExpression\": \"prd_name\",\n    \"SortOrder\": \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserActual/ExportToExcel",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserActual",
+										"ExportToExcel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request Verification",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"3\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserActual/RequestVerificationActual",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserActual",
+										"RequestVerificationActual"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Detail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpId\": \"998158\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SortExpression\": \"spa_date\",\n    \"SortOrder\": \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/UserRealization/DetailUserRealization",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"UserRealization",
+										"DetailUserRealization"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sp Plan",
+			"item": [
+				{
+					"name": "Index",
+					"item": [
+						{
+							"name": "DataViewPartial",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"7\",\n    \"Year\": \"2021\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{server}}/Api/SpPlan/DataViewPartial",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"DataViewPartial"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DataViewPartial summary",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"3\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/DoctorSummary",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"DoctorSummary"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Progress View",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SprId\": \"SPR1901479\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/DetailViewProgress",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"DetailViewProgress"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete SP Plan",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SprId\": \"SPR1901468\",\n    \"Month\": \"5\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/DeletePlan",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"DeletePlan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Pdf",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"4\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/ExportToPdf",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"ExportToPdf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Excel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"4\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/ExportToExcel",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"ExportToExcel"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Edit Form",
+					"item": [
+						{
+							"name": "Tab Product",
+							"item": [
+								{
+									"name": "dropdown product",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/DropdownProductResult",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"DropdownProductResult"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DetailViewProductSP",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SprId\":\"SPR1901418\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/DetailViewProductSP",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"DetailViewProductSP"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add Product SP",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SprId\": \"SPR1901418\",\n    \"SpProduct\": \"T7\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/AddProductSP",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"AddProductSP"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Product SP",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SprId\": \"SPR1901418\",\n    \"SppId\": \"25868\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/DeleteProductSP",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"DeleteProductSP"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Tab Participant",
+							"item": [
+								{
+									"name": "DetailViewParticipantEdit",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpId\": 23823,\n    \"SpType\": \"SP1\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/DetailViewParticipantEdit",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"DetailViewParticipantEdit"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Doctor List",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"SortExpression\" : \"visit_date_plan\",\n\t\"SortOrder\" : \"ASC\",\n\t\"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/GetDoctor",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"GetDoctor"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Sponsor List",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SortExpression\": \"sponsor_id\",\n    \"SortOrder\": \"ASC\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/GetSponsor",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"GetSponsor"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add Participant Detail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpId\": \"23823\",\n    \"SprId\": \"SPR1901418\",\n    \"SpType\": \"SP1\",\n    \"DrCode\": \"100005\",\n    \"SponsorId\": \"9\",\n    \"BudgetPlanValue\": \"1000000\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/AddParticipantDetail",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"AddParticipantDetail"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Participant Detail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpdsId\": \"81650\",\n    \"SponsorId\": \"9\",\n    \"SpType\": \"SP1\",\n    \"BudgetPlanValue\": \"1000000\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/UpdateParticipantDetail",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"UpdateParticipantDetail"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Participant Detail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpdsId\": \"81650\",\n    \"SpType\": \"SP1\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/DeleteParticipantDetail",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"DeleteParticipantDetail"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Tab Event",
+							"item": [
+								{
+									"name": "Save Edit Event",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SprId\": \"SPR1901469\",\n    \"EName\": \"Regular\",\n    \"ETopic\": \"ASPAR K : karena tidak bersifat asam (berbeda dengan Kalium Klorida yang bersifat asam)\",\n    \"EPlace\": \"bdg\",\n    \"DateStart\": \"2019-05-01\",\n    \"DateEnd\": \"2019-05-30\",\n    \"Notes\": \"test fix message error\",\n    \"SprStatus\": \"3\",\n    \"Day\": \"0\",\n    \"Month\": \"5\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/SaveEditEvent",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"SaveEditEvent"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Save Edit Budget Allocation",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SprId\": \"SPR1901469\",\n    \"SpBa\": \"OWN\",\n    \"Day\": \"0\",\n    \"Month\": \"5\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/SaveEditBa",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"SaveEditBa"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Tab Approval",
+							"item": [
+								{
+									"name": "ViewApprovalRealization",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SprId\": \"SPR1901466\",\n    \"SortExpression\" : \"spa_level\",\n\t\"SortOrder\" : \"ASC\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpPlan/ViewApprovalRealization",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpPlan",
+												"ViewApprovalRealization"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Add Form",
+					"item": [
+						{
+							"name": "Sales Promotion List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+								},
+								"url": {
+									"raw": "{{server}}/Api/SpPlan/ListBoxPartial",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"ListBoxPartial"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Product List (Own Budget & PMD Budget)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/LoadRealProductMultiple",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"LoadRealProductMultiple"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Event List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpType\": \"SP1\",\n    \"EventBudget\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/EventNamePartialView",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"EventNamePartialView"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Event Topic",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/cbProductTopicLookup",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"cbProductTopicLookup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Participant Dropdown",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/RepDetailPartialView",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"RepDetailPartialView"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Sponsor List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SortExpression\": \"sponsor_id\",\n    \"SortOrder\": \"ASC\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/GetSponsor",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"GetSponsor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Doctor List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SearchColumn\":\"dr_monitoring\",\n    \"SearchValue\":\"32 KOTA\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/GetDoctor",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"GetDoctor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add New - SP 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"5\",\n    \"Year\": \"2019\",\n    \"SpType\": \"SP1\",\n    \"DateStart\": \"2019-05-01\",\n    \"DateEnd\": \"2019-05-30\",\n    \"ListProducts\":[\n    \t{\n    \t\t\"ProductBudget\":\"PM Arixtra\",\n    \t\t\"ProductBudgetAllocation\" : \"10.0\",\n    \t\t\"ProductDesc\":\"ARIXTRA\",\n    \t\t\"VisitCode\":\"T9B\"\n    \t},\n    \t{\n    \t\t\"ProductBudget\":\"PM Non Cardio Vascular\",\n    \t\t\"ProductBudgetAllocation\" : \"90.0\",\n    \t\t\"ProductDesc\":\"ASVEX\",\n    \t\t\"VisitCode\":\"T10\"\n    \t}\n\t],\n    \"EName\": \"AV\",\n    \"ETopic\": \"ASPAR K : karena tidak bersifat asam (berbeda dengan Kalium Klorida yang bersifat asam)\",\n    \"EPlace\": \"bdg\",\n    \"GeneralSponsor\": \"9\",\n    \"BAmount\": 1000000,\n    \"Participant\": \"308001,308002\",\n    \"Notes\": \"test\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/AddNewPlan",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"AddNewPlan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add New - SP 2 - OWN",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"5\",\n    \"Year\": \"2019\",\n    \"SpType\": \"SP2\",\n    \"DateStart\": \"2019-05-01\",\n    \"DateEnd\": \"2019-05-30\",\n    \"Product\": \"T9B,T10\",\n    \"EName\": \"AV\",\n    \"ETopic\": \"ASPAR K : karena tidak bersifat asam (berbeda dengan Kalium Klorida yang bersifat asam)\",\n    \"EPlace\": \"bdg\",\n    \"GeneralSponsor\": \"9\",\n    \"BAmount\": 1000000,\n    \"Participant\": \"308001,308002\",\n    \"Notes\": \"test\",\n    \"BAllocation\":\"OWN\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/AddNewPlan",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"AddNewPlan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add New - SP 2 - PMD",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"5\",\n    \"Year\": \"2019\",\n    \"SpType\": \"SP1\",\n    \"DateStart\": \"2019-05-01\",\n    \"DateEnd\": \"2019-05-30\",\n    \"ListProducts\":[\n    \t{\n    \t\t\"ProductBudget\":\"PM Arixtra\",\n    \t\t\"ProductBudgetAllocation\" : \"10.0\",\n    \t\t\"ProductDesc\":\"ARIXTRA\",\n    \t\t\"VisitCode\":\"T9B\"\n    \t},\n    \t{\n    \t\t\"ProductBudget\":\"PM Non Cardio Vascular\",\n    \t\t\"ProductBudgetAllocation\" : \"90.0\",\n    \t\t\"ProductDesc\":\"ASVEX\",\n    \t\t\"VisitCode\":\"T10\"\n    \t}\n\t],\n    \"EName\": \"AV\",\n    \"ETopic\": \"ASPAR K : karena tidak bersifat asam (berbeda dengan Kalium Klorida yang bersifat asam)\",\n    \"EPlace\": \"bdg\",\n    \"GeneralSponsor\": \"9\",\n    \"BAmount\": 1000000,\n    \"Participant\": \"308001,308002\",\n    \"Notes\": \"test\",\n    \"BAllocation\":\"PMD\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpPlan/AddNewPlan",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"AddNewPlan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Budget Remaining",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Year\":2019,\n    \"Month\":7,\n    \"SpType\" : \"SP2\",\n    \"BAllocation\":\"OWN Budget\"\n}"
+								},
+								"url": {
+									"raw": "{{server}}/Api/SpPlan/BudgetRemainingPartialView",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Api",
+										"SpPlan",
+										"BudgetRemainingPartialView"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sp Realization",
+			"item": [
+				{
+					"name": "Index",
+					"item": [
+						{
+							"name": "DataViewPartial",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"6\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{server}}/Api/SpRealization/DataViewPartial",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Api",
+										"SpRealization",
+										"DataViewPartial"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DataViewPartial summary",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"4\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpRealization/DoctorSummary",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpRealization",
+										"DoctorSummary"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Pdf",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"4\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpRealization/ExportToPdf",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpRealization",
+										"ExportToPdf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Excel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"Month\": \"4\",\n    \"Year\": \"2019\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{server}}/Api/SpRealization/ExportToExcel",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Api",
+										"SpRealization",
+										"ExportToExcel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PrintView",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"spr_id\": \"SPR1900714\",\n\t\"sp_type\": \"SP2\",\n\t\"spr_no\": \"SPR/2019/00763\",\n\t\"spr_date\": \"16/01/2019\",\n\t\"event_name\": \"Regular\",\n\t\"startDate\": \"16/01/2019\",\n\t\"topic\": \"ARIXTRA : Resiko perdarahan mayor berkurang secara signifikan hingga 48%  dibandingkan dengan Enoxaparin pada hari ke-9 pasien NSTEMI (OASIS-5)\",\n\t\"endDate\": \"31/01/2019\",\n\t\"event_place\": \"RSUD Kota, RS KBP, RS Dhuafa\"\n}"
+								},
+								"url": {
+									"raw": "http://www.tanabe-sf.com/Api/SPRealization/PrintView",
+									"protocol": "http",
+									"host": [
+										"www",
+										"tanabe-sf",
+										"com"
+									],
+									"path": [
+										"Api",
+										"SPRealization",
+										"PrintView"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Edit Form",
+					"item": [
+						{
+							"name": "Additional Doctor",
+							"item": [
+								{
+									"name": "Doctor List",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpRealization/DoctorDetailPartialView",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpRealization",
+												"DoctorDetailPartialView"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Sponsor List",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpRealization/SponsorGeneralPartialView",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpRealization",
+												"SponsorGeneralPartialView"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Save Additional",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SprId\": \"SPR1900714\",\n    \"SpId\": \"22083\",\n    \"SpType\": \"SP2\",\n    \"DrCode\": \"308003\",\n    \"SponsorId\": \"1\",\n    \"BudgetRealValue\": \"1000000\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpRealization/SaveAdditional",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpRealization",
+												"SaveAdditional"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Tab participant",
+							"item": [
+								{
+									"name": "Grid View Detail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpId\": \"23856\",\n    \"SpType\": \"SP2\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpRealization/DetailViewParticipantEdit",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpRealization",
+												"DetailViewParticipantEdit"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Save Realization",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpId\": \"23856\",\n    \"SpType\": \"SP2\",\n    \"BatchValues\": [\n        {\n            \"SpdsId\": \"81684\",\n            \"SponsorId\": \"1\",\n            \"DrActual\": \"333121\",\n            \"BudgetRealValue\": \"1000000\"\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpRealization/BatchUpdateParticipantPartial",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpRealization",
+												"BatchUpdateParticipantPartial"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Tab Attachment",
+							"item": [
+								{
+									"name": "Upload Attachment",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "FileUpload",
+													"type": "file",
+													"src": "/C:/Users/admin/Pictures/testimage.jpg"
+												},
+												{
+													"key": "Auth",
+													"value": "Rjf3UzWQQgU=",
+													"type": "text"
+												},
+												{
+													"key": "SprId",
+													"value": "SPR1903661",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpRealization/UploadAttachment",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpRealization",
+												"UploadAttachment"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Attachment Grid View",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SprId\": \"SPR1903661\"\n}"
+										},
+										"url": {
+											"raw": "{{server}}/Api/SpRealization/gridAttachmentView",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"Api",
+												"SpRealization",
+												"gridAttachmentView"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Attachment",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpfId\": \"\",\n    \"SprId\": \"\"\n}"
+										},
+										"url": {
+											"raw": "{{local}}/Api/SpRealization/DeleteAttachment",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"Api",
+												"SpRealization",
+												"DeleteAttachment"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Submit / Update Realization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\",\n    \"SpId\": \"23852\",\n    \"RealDateTime\": \"2019-01-25\",\n    \"RealizationState\": \"0\",\n    \"EPlace\": \"RSUD Kota, RS KBP, RS Dhuafax\"\n}"
+								},
+								"url": {
+									"raw": "{{local}}/Api/SpRealization/SubmitRealization",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"Api",
+										"SpRealization",
+										"SubmitRealization"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sp Actual",
+			"item": [
+				{
+					"name": "DataViewPartial summary",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"month\":\"3\",\n\t\"year\":\"2019\",\n\t\"sortExpression\" : \"spr_id\",\n\t\"SortOrder\" : \"ASC\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"Search\" : \"\",\n\t\"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{local}}/Api/SpActual/DoctorSummary",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"Api",
+								"SpActual",
+								"DoctorSummary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sp Report",
+			"item": [
+				{
+					"name": "DataViewPartial summary",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Auth\" : \"rmcCFF3Z0OY=\",\n\t\"month\":\"1\",\n\t\"year\":\"2019\",\n\t\"sortExpression\" : \"spr_id\",\n\t\"SortOrder\" : \"ASC\",\n\t\"PageIndex\" : 1,\n\t\"PageSize\" : 10,\n\t\"Search\" : \"\",\n\t\"SearchColumn\": \"\",\n\t\"SearchValue\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{local}}/Api/SpReport/DoctorSummary",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"Api",
+								"SpReport",
+								"DoctorSummary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "SP Pivot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/Api/SPPivot/GetReport",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"Api",
+								"SPPivot",
+								"GetReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SalesPivot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/Api/SalesPivot/GetReport",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"Api",
+								"SalesPivot",
+								"GetReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ExpensePivot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Auth\": \"rmcCFF3Z0OY=\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/Api/ExpensePivot/GetReport",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"Api",
+								"ExpensePivot",
+								"GetReport"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Visit Associate",
+			"item": []
+		}
+	]
+}

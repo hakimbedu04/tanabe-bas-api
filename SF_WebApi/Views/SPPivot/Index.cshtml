@@ -1,0 +1,270 @@
+﻿
+@{
+    Layout = null;
+}
+
+<script type="text/javascript">
+
+    function do_export(s, e) {
+        var param = "export;" + s.GetMainElement().getAttribute("type_file");
+        SPPivot.PerformCallback({ prm: param });
+    }
+
+    function do_retrieve(s, e) {
+        //var jsDate = dateEdit.GetDate();
+        var jsDateStart = dateStart.GetDate();
+        var yearStart = jsDateStart.getFullYear(); // where getFullYear returns the year (four digits)
+        var monthStart = jsDateStart.getMonth() + 1; // where getMonth returns the month (from 0-11)
+        var dayStart = jsDateStart.getDate();   // where getDate returns the day of the month (from 1-31)
+
+        var jsDateEnd = dateEnd.GetDate();
+        var yearEnd = jsDateEnd.getFullYear(); // where getFullYear returns the year (four digits)
+        var monthEnd = jsDateEnd.getMonth() + 1; // where getMonth returns the month (from 0-11)
+        var dayEnd = jsDateEnd.getDate();   // where getDate returns the day of the month (from 1-31)
+
+        var DateStart = yearStart + '-' + monthStart + '-' + dayStart;
+        var DateEnd = yearEnd + '-' + monthEnd + '-' + dayEnd;
+        var param = 'retrieve;' + DateStart + ';' + DateEnd;
+        //alert(param); return false;
+        SPPivot.PerformCallback({ prm: param });
+
+    }
+    function do_reset(s, e) {
+        dateStart.SetValue(null);
+        dateEnd.SetValue(null);
+        //cboyear.SetValue(null);
+        var param = 'reset;' + null + ';' + null + ';' + null;
+        SPPivot.PerformCallback({ prm: param });
+        return false;
+    }
+</script>
+<style type="text/css">
+    .table {
+        width: 100%;
+        padding-right: 5px;
+        /*border:1px solid red;*/
+    }
+
+    .cell-backround {
+        background-color: #F0F0F0;
+        color: black;
+    }
+
+    .cell-newplan {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .cell-month {
+        width: 150px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 5px;
+    }
+
+    .cell-year {
+        width: 50px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 20px;
+    }
+
+    .cell-retrieve {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 10px;
+    }
+
+    .cell-reset {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 5px;
+    }
+
+    .panel-content {
+        margin-left: 8px;
+        margin-top: 8px;
+    }
+
+    .distance-left {
+        margin-left: 5px;
+    }
+
+    .distance-right {
+        margin-right: 5px;
+    }
+
+    .cell-blank {
+        width: 100%;
+        background-color: #F0F0F0;
+    }
+
+    .cell-divider {
+        height: 5px;
+        width: 100%;
+    }
+
+    .title-form {
+        padding-bottom: 4px;
+        background-color: gainsboro;
+    }
+</style>
+
+<div class="panel-content" style="margin:0px">
+
+    <table class="table" style="margin:0px">
+        <tr><td class="title-form" style="text-align:center; font-weight:bold;" colspan="11">:: SALES PROMOTION PIVOT ::</td></tr>
+        <tr>
+            <td class="cell-month cell-backround">
+                @Html.DevExpress().DateEdit(
+                    settings => {
+                        settings.Name = "dateStart";
+                                    settings.Properties.Caption = "Date Start";
+                                    settings.Properties.CaptionSettings.Position = EditorCaptionPosition.Left;
+                                    settings.Name = "dateStart";
+                                    settings.Properties.NullText = "Date Start";
+                    }).GetHtml()
+                
+                </td>
+            <td class="cell-month cell-backround">
+                @Html.DevExpress().DateEdit(
+                    settings => {
+                                    settings.Name = "dateEnd";
+                                    settings.Properties.Caption = "Date End";
+                                    settings.Properties.CaptionSettings.Position = EditorCaptionPosition.Left;
+                                    settings.Name = "dateEnd";
+                                    settings.Properties.NullText = "Date End";
+                    }).GetHtml()
+                
+            </td>
+            <td class="cell-reset cell-backround">
+
+                @Html.DevExpress().Button(
+                    settings =>
+                    {
+                        settings.Name = "btnreset";
+                        settings.UseSubmitBehavior = true;
+                        settings.ControlStyle.CssClass = "button";
+                        settings.Text = "Reset";
+                        settings.Images.Image.Url = "~/Content/Images/reset.png";
+                        settings.ToolTip = "Reset";
+                        settings.ClientSideEvents.Click = "do_reset";
+                    }
+                    ).GetHtml()
+            </td>
+            <td class="cell-blank"></td>
+            <td class="cell-blank"></td>
+            <td class="cell-reset cell-backround"></td>
+            <td class="cell-reset cell-backround"></td>
+            <td class="cell-reset cell-backround">
+                @Html.DevExpress().Button(
+                    settings =>
+                    {
+                        settings.Name = "btnretrieve";
+                        settings.ControlStyle.CssClass = "button";
+                        settings.Text = "Retrieve";
+                        settings.Images.Image.Url = "~/Content/Images/retrieve.png";
+                        settings.ToolTip = "Retrieve";
+                        settings.ClientSideEvents.Click = "do_retrieve";
+                    }
+                ).GetHtml()
+            </td>
+            <td class="cell-reset cell-backround">
+
+                @Html.DevExpress().Button(
+                settings =>
+                {
+                    settings.Name = "PDF";
+                    settings.ControlStyle.CssClass = "button";
+                    settings.Text = "Export to PDF";
+                    settings.Images.Image.Url = "~/Content/Images/pdf.png";
+                    settings.ToolTip = "Export to PDF";
+                    settings.Attributes["type_file"] = "PDF";
+                    settings.UseSubmitBehavior = true;
+                    settings.ClientSideEvents.Click = "do_export";
+                }
+            ).GetHtml()
+
+
+            </td>
+
+            @*<td class="cell-retrieve cell-backround">
+                @Html.DevExpress().DateEdit(
+                    settings => {
+                        settings.Name = "btnretrieve";
+                                    settings.ControlStyle.CssClass = "button";
+                                    settings.Text = "Retrieve";
+                                    settings.Images.Image.Url = "~/Content/Images/retrieve.png";
+                                    settings.ToolTip = "Retrieve";
+                                    settings.ClientSideEvents.Click = "do_retrieve";
+                    }).GetHtml()
+
+            </td>
+                <td class="cell-reset cell-backround">
+                    @Html.DevExpress().Button(Sub(settings)
+                                                  settings.Name = "btnreset"
+                                                  settings.UseSubmitBehavior = True
+                                                  settings.ControlStyle.CssClass = "button"
+                                                  settings.Text = "Reset"
+                                                  settings.Images.Image.Url = "~/Content/Images/reset.png"
+                                                  settings.ToolTip = "Reset"
+                                                  settings.ClientSideEvents.Click = "do_reset"
+                                              End Sub).GetHtml()
+                </td>
+                <td class="cell-blank"></td>
+                <td class="cell-blank"></td>
+                <td class="cell-reset cell-backround"></td>
+                <td class="cell-reset cell-backround"></td>
+                <td class="cell-reset cell-backround">
+                    @Html.DevExpress().Button(Sub(settings)
+                                                  settings.Name = "PDF"
+                                                  settings.ControlStyle.CssClass = "button"
+                                                  settings.Text = "Export to PDF"
+                                                  settings.Images.Image.Url = "~/Content/Images/pdf.png"
+                                                  settings.ToolTip = "Export to PDF"
+                                                  settings.Attributes("type_file") = "PDF"
+                                                  settings.UseSubmitBehavior = True
+                                                  settings.ClientSideEvents.Click = "do_export"
+                                              End Sub).GetHtml()
+                </td>
+                <td class="cell-reset cell-backround">
+                    @Html.DevExpress().Button(Sub(settings)
+                                                  settings.Name = "RawData"
+                                                  settings.ControlStyle.CssClass = "button"
+                                                  settings.Text = "Export Row Data"
+                                                  settings.Images.Image.Url = "~/Content/Images/pdf.png"
+                                                  settings.ToolTip = "Export Row Data"
+                                                  settings.Attributes("type_file") = "ROWDATA"
+                                                  settings.UseSubmitBehavior = True
+                                                  settings.ClientSideEvents.Click = "do_export"
+                                              End Sub).GetHtml()
+                </td>
+                <td class="cell-reset cell-backround">
+                    @Html.DevExpress().Button(Sub(settings)
+                                                  settings.Name = "XLS"
+                                                  settings.ControlStyle.CssClass = "button"
+                                                  settings.Text = "Export to Excell"
+                                                  settings.Images.Image.Url = "~/Content/Images/excel.png"
+                                                  settings.ToolTip = "Export to Excell"
+                                                  settings.ControlStyle.CssClass = "distance-right"
+                                                  settings.Attributes("type_file") = "XLS"
+                                                  settings.UseSubmitBehavior = True
+                                                  settings.ClientSideEvents.Click = "do_export"
+                                              End Sub).GetHtml()
+                </td>*@
+        </tr>
+    </table>
+
+    <table style="width:100%;">
+        <tr>
+            <td style="padding-top:0px;vertical-align:top;">
+                @*@Html.Action("SPPivotView", Model)*@
+                @Html.Action("PivotGrid1Partial", "SPPivot")
+            </td>
+            <td style="width:300px">
+                @Html.DevExpress().PivotCustomizationExtension(SF_WebApi.Controllers.Report.SPPivotGridLayout.SPPivotGridSettings).GetHtml()
+            </td>
+        </tr>
+    </table>
+</div>
+

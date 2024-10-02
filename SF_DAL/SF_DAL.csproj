@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8510F9D-B9F3-4FDC-B018-B6E5B363BAC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SF_DAL</RootNamespace>
+    <AssemblyName>SF_DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BAS\All_Karyawan.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\C_parameter.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\log_login.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_bo.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_customer_aso.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_doctor.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_event.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_gl_cs.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_info_feedback_mobile.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_position.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_product.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_regional.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_rep.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_role.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_sbo.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_sponsor.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_status.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\m_topic.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SF_BASContextDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SF_BASContextDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SF_BASContextDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SF_BASContextDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SF_BASContextDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SF_BASContextDB2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SF_BASContextDB2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SF_BASContextDB2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SF_BASContextDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SF_BASContextDB2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SF_BASContextDB2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_Bagian_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_Departemen_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_HeadQuarter_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_Jabatan_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_Karyawan_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_bo_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_customer_aso_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_doctor_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_event_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_gl_cs_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_info_feedback_mobile_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_product_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_regional_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_rep_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_sbo_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_sponsor_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_status_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_m_topic_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_t_gps_mobile_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_t_info_feedback_topic_mapping_mobile_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_t_signature_mobile_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_t_spr_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_t_sp_doctor_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_t_sp_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_t_sp_sponsor_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_t_visit_product_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_t_visit_product_topic_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\sp_offline_t_visit_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_PRODUCT_SP_PLAN_MOBILE_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_PRODUCT_VISIT_MOBILE_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_DOCTOR_LIST_NEW_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_DOCTOR_LIST_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_DOCTOR_LIST_SPEAKER_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_DOCTOR_LIST_SP_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_DOCTOR_PLANNED_DETAIL_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_FINISHED_VISIT_MOBILE_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_FINISHED_VISIT_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_FINISHED_VISIT_SEARCH_MOBILE_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_IS_ALREADY_PLANNED_DOCTOR_IN_CURR_WEEK_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_MASTER_DOCTOR_PIVOT_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_PRODUCT_TOPIC_LIST_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_PRODUCT_USER_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_PRODUCT_VISIT_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_PROFILE_DOCTORE_DETAIL_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_REPORT_SALES_HISTORY_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_REPORT_TARGET_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_REP_FOR_VERIFICATION_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_REP_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_SPR_INFO_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_SP_ATTACHMENT_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_SP_PIVOT_REPORT_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_SP_PLAN_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_SP_REALIZATION_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_USER_ACTUAL_SEARCH_MOBILE_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_VISIT_ASSOCIATED_BY_VISIT_ID_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_VISIT_ASSOCIATED_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_VISIT_PLAN_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_VISIT_SP_PLAN_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_VISIT_SP_REALIZATION_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_VISIT_USER_PRODUCT_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\SP_SELECT_VOUCHER_DETAIL_Result.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_expense_approval.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_expense_attachment.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_expense_detail.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_gps_mobile.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_info_feedback_topic_mapping_mobile.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_material_order.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_sales.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_sales_product.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_sales_product_actual.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_shift_log.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_signature_mobile.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_sp_approval.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_sp_attachment.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_visit.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_visit_associate.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_visit_product.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\t_visit_product_topic.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\usermobile.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_auth_sp.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_doctor_sponsor.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_expense.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_info_feedback.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_m_doctor.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_product_price.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_rep_admin.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_rep_full.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_rep_full_new.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_sales_plan_2.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_sales_product.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_spr.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_sp_product.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_visit_associate.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_visit_plan.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_visit_plan_mobile.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_visit_plan_new.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_visit_product.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAS\v_visit_product_topic.cs">
+      <DependentUpon>SF_BASContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\All_Karyawan.cs">
+      <DependentUpon>SF_HRDContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\Bagian.cs">
+      <DependentUpon>SF_HRDContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\Departeman.cs">
+      <DependentUpon>SF_HRDContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\HeadQuarter.cs">
+      <DependentUpon>SF_HRDContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\Jabatan.cs">
+      <DependentUpon>SF_HRDContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\Karyawan.cs">
+      <DependentUpon>SF_HRDContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\SF_HRDContextDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SF_HRDContextDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\SF_HRDContextDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SF_HRDContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\SF_HRDContextDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SF_HRDContextDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\tuser.cs">
+      <DependentUpon>SF_HRDContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod\All_Karyawan.cs">
+      <DependentUpon>ProdContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod\Aplikai_User.cs">
+      <DependentUpon>ProdContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod\ProdContextDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProdContextDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod\ProdContextDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProdContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod\ProdContextDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProdContextDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Prod\tUser.cs">
+      <DependentUpon>ProdContextDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="BAS\SF_BASContextDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SF_BASContextDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BAS\SF_BASContextDB.edmx.diagram">
+      <DependentUpon>SF_BASContextDB.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="HRD\SF_HRDContextDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SF_HRDContextDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="BAS\SF_BASContextDB2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SF_BASContextDB2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BAS\SF_BASContextDB2.edmx.diagram">
+      <DependentUpon>SF_BASContextDB2.edmx</DependentUpon>
+    </None>
+    <None Include="HRD\SF_HRDContextDB.edmx.diagram">
+      <DependentUpon>SF_HRDContextDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="Prod\ProdContextDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProdContextDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Prod\ProdContextDB.edmx.diagram">
+      <DependentUpon>ProdContextDB.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BAS\SF_BASContextDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SF_BASContextDB.edmx</DependentUpon>
+      <LastGenOutput>SF_BASContextDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BAS\SF_BASContextDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SF_BASContextDB.edmx</DependentUpon>
+      <LastGenOutput>SF_BASContextDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="BAS\SF_BASContextDB2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SF_BASContextDB2.edmx</DependentUpon>
+      <LastGenOutput>SF_BASContextDB2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BAS\SF_BASContextDB2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SF_BASContextDB2.edmx</DependentUpon>
+      <LastGenOutput>SF_BASContextDB2.cs</LastGenOutput>
+    </Content>
+    <Content Include="HRD\SF_HRDContextDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SF_HRDContextDB.edmx</DependentUpon>
+      <LastGenOutput>SF_HRDContextDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HRD\SF_HRDContextDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SF_HRDContextDB.edmx</DependentUpon>
+      <LastGenOutput>SF_HRDContextDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Prod\ProdContextDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProdContextDB.edmx</DependentUpon>
+      <LastGenOutput>ProdContextDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Prod\ProdContextDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProdContextDB.edmx</DependentUpon>
+      <LastGenOutput>ProdContextDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

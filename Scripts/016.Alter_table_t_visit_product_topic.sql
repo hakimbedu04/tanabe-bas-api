@@ -1,0 +1,2 @@
+ALTER TABLE t_visit_product_topic
+add info_feedback_id int

@@ -1,0 +1,12 @@
+[Support]-Add-new-role-[PE]
+
+// author : Hakim
+// date : 2021-08-12
+// description : add role for PE
+
+1. BaseController.cs line 123 - 149
+2. DashboardBLL.cs line 71, 276, 317, 347, 405, 434
+
+note :
+Link patch update https://cutt.ly/IQFb7Mk
+
